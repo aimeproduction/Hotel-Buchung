@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="095abcf1-b77d-40e7-8c11-a24be4aa16e7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hotel-buchung-angular/src/app/models/customer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/src/app/components/neue-buchung/neue-buchung.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/src/app/components/neue-buchung/neue-buchung.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/src/app/components/neue-buchung/neue-buchung.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/src/app/components/neue-buchung/neue-buchung.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/src/app/components/neue-buchung/neue-buchung.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/src/app/components/neue-buchung/neue-buchung.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/src/app/service/hotel-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/src/app/service/hotel-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-buchung-angular/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-buchung-angular/src/styles.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="first_issues" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IMb8b5I48tfZuwQidctEvDsJLS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mnang/WebstormProjects/promise_async_await&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mnang\\WebstormProjects\\Hotel-Buchung\\hotel-buchung-angular\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="095abcf1-b77d-40e7-8c11-a24be4aa16e7" name="Changes" comment="" />
+      <created>1669994240508</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669994240508</updated>
+      <workItem from="1669994256683" duration="6993000" />
+      <workItem from="1670004466588" duration="701000" />
+      <workItem from="1670016664507" duration="1667000" />
+      <workItem from="1670052177122" duration="409000" />
+      <workItem from="1670053113476" duration="1733000" />
+      <workItem from="1670054915456" duration="122000" />
+      <workItem from="1670055252768" duration="912000" />
+      <workItem from="1670056204890" duration="55000" />
+      <workItem from="1670056313239" duration="10368000" />
+      <workItem from="1670221583289" duration="2455000" />
+      <workItem from="1670252566676" duration="425000" />
+      <workItem from="1670520684214" duration="648000" />
+      <workItem from="1670521682529" duration="55000" />
+      <workItem from="1670592433799" duration="1004000" />
+      <workItem from="1670926831494" duration="272000" />
+      <workItem from="1671718015425" duration="258000" />
+      <workItem from="1672484061011" duration="19118000" />
+      <workItem from="1672612950317" duration="1937000" />
+      <workItem from="1672658545570" duration="16015000" />
+      <workItem from="1672675712331" duration="2256000" />
+      <workItem from="1672678087268" duration="4036000" />
+      <workItem from="1672921539272" duration="5162000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

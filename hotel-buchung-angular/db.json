@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "Gender": "Mr.",
+      "Roomnumber": "8",
+      "Firstname": "hbhjg",
+      "Lastname": "hghjg",
+      "Email": "jhhg",
+      "Phonenummer": 452,
+      "Startdate": "2023-01-04",
+      "Enddate": "2023-01-08",
+      "id": 2
+    },
+    {
+      "Gender": "Mr.",
+      "Roomnumber": "9",
+      "Firstname": "ghjg",
+      "Lastname": "gfhf",
+      "Email": "hgfg",
+      "Phonenummer": 5421,
+      "Startdate": "2023-01-04",
+      "Enddate": "2023-01-09",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

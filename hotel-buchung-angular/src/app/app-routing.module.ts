@@ -6,17 +6,17 @@ import {NeueBuchungComponent} from "./components/neue-buchung/neue-buchung.compo
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'list-buchung',
+    redirectTo: 'neue-buchung',
     pathMatch: 'full'
 
   },
   {
-    path: 'list-buchung',
-    component: ListBuchungComponent,
-  },
-  {
     path: 'neue-buchung',
     component: NeueBuchungComponent,
+  },
+  {
+    path: 'list-buchung',
+    component: ListBuchungComponent,
   }
 ];
 
