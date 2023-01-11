@@ -1,1 +1,130 @@
-<p>neue-buchung works!</p>
+<mat-toolbar class="mat-elevation-z8">
+  Welcome!
+  <button class="home" mat-button color="primary" routerLink="/neue-buchung">Home</button>
+  <button class="new-book" mat-button color="primary" routerLink="/neue-buchung">Add booking</button>
+  <button class="new-book" mat-button color="primary" routerLink="/list-buchung">list booking</button>
+</mat-toolbar>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title></title>
+</head>
+<body>
+<div class="container">
+  <div class="title">Room booking</div>
+  <div class="content">
+    <form [formGroup]="form" (ngSubmit)="Roomsearch(form)">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Arrival date</span>
+          <input type="date" formControlName="Startdate" placeholder="Your arrival date" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Departure date</span>
+          <input type="date" formControlName="Enddate" placeholder="Your departure date" required>
+        </div>
+        <div class="button">
+          <input type="submit" value="Search for available rooms">
+        </div>
+        <div class="errordate">
+          <p class="errordateMessage"> {{errorDate}}</p>
+        </div>
+      </div>
+
+
+        <div *ngIf="freerooms">
+          <div class="input-box">
+            <span class="details">Free rooms</span>
+            <select formControlName="Roomnumber">
+              <option *ngFor="let Freeroom of freerooms" value="{{Freeroom}}">{{Freeroom}}</option>
+
+            </select>
+          </div>
+
+          <div class="gender-details">
+            <span class="details">Gender</span>
+            <select formControlName="Gender">
+              <option value="Mr.">Mr.</option>
+              <option value="Ms.">Ms.</option>
+              <option value="Divers.">Divers.</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Firstname</span>
+            <input type="text" placeholder="Your firstname" formControlName="Firstname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Lastname</span>
+            <input type="text" placeholder="Your lastname" formControlName="Lastname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Your email" formControlName="Email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" placeholder="Your number" formControlName="Phonenummer" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Arrival date</span>
+            <input type="date" placeholder="Your arrival date" formControlName="Startdate" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Departure date</span>
+            <input type="date" placeholder="Your departure date" formControlName="Enddate" required>
+          </div>
+
+          <div class="button">
+            <input type="submit" value="Search for available rooms" (click)="onSubmit()">
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!--<div class="input-box">
+  <span class="details">Firstname</span>
+  <input type="text" placeholder="Your firstname" required>
+</div>
+<div class="input-box">
+  <span class="details">Lastname</span>
+  <input type="text" placeholder="Your lastname" required>
+</div>
+<div class="input-box">
+  <span class="details">Email</span>
+  <input type="email" placeholder="Your email" required>
+</div>
+<div class="input-box">
+  <span class="details">Phone Number</span>
+  <input type="number" placeholder="Your number" required>
+</div>
+<div class="input-box">
+  <span class="details">Arrival date</span>
+  <input type="date" placeholder="Your arrival date" required>
+</div>
+<div class="input-box">
+  <span class="details">Departure date</span>
+  <input type="date" placeholder="Your departure date" required>
+</div>
+
+<div class="gender-details">
+  <input type="radio" name="gender" id="dot-1">
+  <input type="radio" name="gender" id="dot-2">
+  <input type="radio" name="gender" id="dot-3">
+</div>
+<div class="button">
+  <input type="submit" value="Search for available rooms">
+</div>-->

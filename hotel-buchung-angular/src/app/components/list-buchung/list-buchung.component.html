@@ -1,1 +1,91 @@
-<p>list-buchung works!</p>
+<html>
+
+<body>
+<div>
+
+  <div class="child1">
+    <br><br>
+    <form class="ui container form" appearance="fill" [formGroup]="form_search">
+      <input class="theinput" type="search" formControlName="search" style="height: 30px;" [(ngModel)]="search">
+      <button class="bt1" mat-raised-button color="primary" [disabled]="no_show"> Search</button>
+    </form>
+  </div>
+</div>
+
+
+<br>
+<br>
+<div>
+  <ng-container *ngIf="data$ | async as data; else loadingOrError">
+    <table class="table1 table-hover table-sm table-bordered">
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Firstname
+        </th>
+        <th>
+          Lastname
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Phone number
+        </th>
+        <th>
+          Room number
+        </th>
+        <th>
+          Arrival Date
+        </th>
+        <th>
+          Departure Date
+        </th>
+        <th>
+          Administration
+        </th>
+      </tr>
+
+      <tr *ngFor="let item of data | filter: search let i = index">
+        <td class="vertical-align">{{item.Gender}}</td>
+        <td class="vertical-align ">{{item.Firstname}}</td>
+        <td class="vertical-align">{{item.Lastname}}</td>
+        <td class="vertical-align">{{item.Email}}</td>
+        <td class="vertical-align ">{{item.Phonenummer}}</td>
+        <td class="vertical-align">{{item.Roomnumber}}</td>
+        <td class="vertical-align ">{{item.Startdate}}</td>
+        <td class="vertical-align ">{{item.Enddate}}</td>
+        <td class="vertical-align">
+          <button mat-icon-button matTooltip="bearbeiten" color="primary" aria-label="bearbeiten"
+                  (click)="update_student(item.matricule, item.id, item.dateoftheDay)">
+            <mat-icon>mode_edit_outline</mat-icon>
+          </button> &nbsp;
+          <button mat-icon-button matTooltip="löschen" color="warn" aria-label="löschen"
+                  (click)="delete_student(item.id, i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </ng-container>
+  <ng-template #loadingOrError>
+    <ng-container *ngIf="errorObject; else loading">
+      <div class="col-12 text-center">
+        <div class="alert alert-danger">
+          <p class="errormessage"> {{ errorObject }}</p>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #loading>
+      <div class="col-12 text-center">
+        <p class="loading">Loading ...</p>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>
+
+</body>
+</html>
