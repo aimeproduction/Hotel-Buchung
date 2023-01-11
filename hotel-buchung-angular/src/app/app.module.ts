@@ -19,6 +19,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import {HttpClientModule} from "@angular/common/http";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatButtonModule,
     MatDividerModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    Ng2SearchPipeModule,
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

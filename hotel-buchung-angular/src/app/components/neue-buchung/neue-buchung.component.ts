@@ -40,6 +40,7 @@ export class NeueBuchungComponent {
             (form.value.Startdate <= data[i].Startdate && form.value.Startdate <= data[i].Enddate &&
               form.value.Enddate <= data[i].Startdate && form.value.Enddate <= data[i].Enddate)){
             this.freerooms.push(this.reservedrooms[i]);
+            this.freerooms = Array.from(new Set(this.freerooms))
             this.freerooms.sort((a, b)=> a-b);
           }
         }
