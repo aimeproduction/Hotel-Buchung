@@ -30,6 +30,9 @@
         <div class="errordate">
           <p class="errordateMessage"> {{errorDate}}</p>
         </div>
+        <div class="errorform">
+          <p class="errordateMessage"> {{errorform}}</p>
+        </div>
       </div>
 
 
@@ -76,8 +79,8 @@
             <input type="date" placeholder="Your departure date" formControlName="Enddate" required>
           </div>
 
-          <div class="button">
-            <input type="submit" value="Search for available rooms" (click)="onSubmit()">
+          <div class="button" >
+            <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onSubmit()">Search for available rooms</button>
           </div>
         </div>
     </form>

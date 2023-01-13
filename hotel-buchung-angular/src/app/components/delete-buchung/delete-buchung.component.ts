@@ -9,13 +9,13 @@ import {Router} from "@angular/router";
 import {Observable, throwError} from "rxjs";
 import {Customer} from "../../models/customer";
 import {catchError} from "rxjs/operators";
+
 @Component({
   selector: 'app-delete-buchung',
   templateUrl: './delete-buchung.component.html',
   styleUrls: ['./delete-buchung.component.css']
 })
 export class DeleteBuchungComponent {
-
   index: number=0;
   customer_id = 0;
   data_api$!: Observable<Customer>;
@@ -26,8 +26,7 @@ export class DeleteBuchungComponent {
   constructor(public dialogRef: MatDialogRef<DeleteBuchungComponent>,
               // tslint:disable-next-line:max-line-length
               @Inject(MAT_DIALOG_DATA) public data: DialogData, private service: HotelServiceService,
-              private _snackBar: MatSnackBar, private http: HttpClient, private ref: ChangeDetectorRef,
-              private router: Router) {
+              private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -54,17 +53,21 @@ export class DeleteBuchungComponent {
   }
 
   delete_student() {
-    this.service.delete_customer_data(this.customer_id).subscribe(() => {
+    this.service.delete_customer_data(this.customer_id).subscribe({
+      next: () => {
         this._snackBar.open('The student has been successfully removed!', 'Okay', {
           duration: 5000,
           verticalPosition: 'top'
         })
-        this.dialogRef.close();
       },
-      error => {
-        alert("Error, failure of the operation");
-      });
+      error: () =>{
+        alert("Error, failure of the operation")
+      },
+      complete: () =>{
+        this.dialogRef.close();
+      }
 
+    })
   }
   deletebookedroom(){
     this.service.deletebookedroom(this.index)

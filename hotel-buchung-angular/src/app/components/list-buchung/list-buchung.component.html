@@ -20,6 +20,9 @@
     <table class="table1 table-hover table-sm table-bordered">
       <tr>
         <th>
+          Booking
+        </th>
+        <th>
           Title
         </th>
         <th>
@@ -49,6 +52,7 @@
       </tr>
 
       <tr *ngFor="let item of data | filter: search let i = index">
+        <td class="vertical-align">{{item.Bookingnumber}}</td>
         <td class="vertical-align">{{item.Gender}}</td>
         <td class="vertical-align ">{{item.Firstname}}</td>
         <td class="vertical-align">{{item.Lastname}}</td>
@@ -59,7 +63,7 @@
         <td class="vertical-align ">{{item.Enddate}}</td>
         <td class="vertical-align">
           <button mat-icon-button matTooltip="bearbeiten" color="primary" aria-label="bearbeiten"
-                  (click)="update_student(item.matricule, item.id, item.dateoftheDay)">
+                  (click)="update_student(item.id)">
             <mat-icon>mode_edit_outline</mat-icon>
           </button> &nbsp;
           <button mat-icon-button matTooltip="löschen" color="warn" aria-label="löschen"

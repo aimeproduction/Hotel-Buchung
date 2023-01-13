@@ -25,11 +25,13 @@ export class HotelServiceService {
   }
 
 
-  delete_customer_data(id: number): Observable<void> {
-    console.log("http://localhost:3000/posts/" + id)
-    return this.http.delete<void>("http://localhost:3000/posts/" + id);
+  delete_customer_data(id: number): Observable<Customer> {
+    return this.http.delete<Customer>("http://localhost:3000/posts/" + id);
   }
 
+  update_customer_data(data: Customer, id: number): Observable<Customer> {
+    return this.http.put<Customer>(`http://localhost:3000/posts/${id}`, data);
+  }
   post_customer_data(data: Customer): Observable<Customer> {
     return this.http.post<Customer>(this.BaseUrl, data).pipe(map((res: Customer) => {
       return res;

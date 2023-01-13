@@ -49,9 +49,8 @@ export class ListBuchungComponent {
   }
 
 
-  update_student(matricule: string, id: number, date: Date) {
-    this.dateoftheday = date;
-    this.customer_id = id;
+  update_student(index: number) {
+    this.customer_id = index;
     this.dialog.open(EditBuchungComponent, {
       width: '700px', height: '650px',
       data: {customer_id: this.customer_id}

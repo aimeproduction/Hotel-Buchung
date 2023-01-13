@@ -3,9 +3,11 @@ html {
   font-family: Roboto,
   "Helvetica Neue",
   sans-serif;
-  height: auto;
   background-color: green;
+  height: 100%;
 }
+
+
 
 .btn5{
   margin-left: 120px;
