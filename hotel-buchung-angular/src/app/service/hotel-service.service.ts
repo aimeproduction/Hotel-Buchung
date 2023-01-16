@@ -7,6 +7,12 @@ import {Customer} from "../models/customer";
   providedIn: 'root'
 })
 export class HotelServiceService {
+  firstUser = 'angular1'
+  firstPassword = 'project1'
+  secondUser = 'angular2'
+  secondPassword = 'project2'
+  firstUserLogged = false;
+  isSomebodyLogged = false;
   reservedrooms!: number[];
   BaseUrl = 'http://localhost:3000/posts';
   constructor(private  http: HttpClient) {

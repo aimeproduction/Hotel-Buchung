@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./neue-buchung.component.css']
 })
 export class NeueBuchungComponent {
+  showHide = false;
   booking_first_part = 'Bo'
   booking_last_part = 1;
   public form!: FormGroup;
@@ -35,6 +36,7 @@ export class NeueBuchungComponent {
      this.errorform =''
     }
     else{
+      this.showHide =true;
       this.errorform =''
       this.errorDate ='';
       this.roomNumber = JSON.parse(<string>localStorage.getItem("roomNumber")) ?? [];
@@ -78,15 +80,21 @@ export class NeueBuchungComponent {
       this.form.value.Bookingnumber = this.bookingnumber;
     console.log('number 1 '+this.bookingnumber)
     this.form.value.Roomnumber = (JSON.parse(this.form.value.Roomnumber))
-    this.service.post_customer_data(this.form.value).subscribe(res => {
-        this.form.reset();
-        this._snackBar.open('A student has been successfully added!', 'Okay', {
+    this.service.post_customer_data(this.form.value).subscribe( {
+      next: () => {
+        this._snackBar.open('The student has been successfully removed!', 'Okay', {
           duration: 5000,
           verticalPosition: 'top'
         })
       },
-      error => {
-        alert("Error, failure of the operation");
+      error: () =>{
+        alert("Error, failure of the operation")
+      },
+      complete: () =>{
+        this.form.reset();
+        this.route.navigate(['neue-buchung'])
+        this.showHide =false;
+      }
       })
 
     })

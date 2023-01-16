@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
 
 html{
-  height: auto;
-  background: forestgreen;
+  height: 200%;
+  background-image: url("src/assets/images/bg.jpg");
 }
 
 .errormessage{
@@ -34,7 +34,12 @@ html{
   margin-top: 10px;
 }
 .theinput{
-  margin-left: 575px;
+  margin-left: 550px;
+  width: 200px;
+
+}
+.example-full-width {
+  width: 100%;
 }
 *{
   margin:0;
@@ -58,7 +63,7 @@ html{
 table{
   position: absolute;
   z-index: 2;
-  left: 2%;
+  left: 3%;
   top: 10%;
   width: 60%;
   border-collapse: collapse;
@@ -66,7 +71,7 @@ table{
   box-shadow: 0 2px 15px rgba(64,64,64,.7);
   border-radius: 12px 12px 0 0;
   overflow: hidden;
-  margin-top: 100px;
+  margin-top: 150px;
 
 }
 td , th{

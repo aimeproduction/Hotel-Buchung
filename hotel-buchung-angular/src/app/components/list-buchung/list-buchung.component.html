@@ -1,13 +1,16 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<app-navbar></app-navbar>
+<head>
+  <title></title>
+</head>
 <body>
 <div>
 
   <div class="child1">
-    <br><br>
+    <br><br><br><br>
     <form class="ui container form" appearance="fill" [formGroup]="form_search">
       <input class="theinput" type="search" formControlName="search" style="height: 30px;" [(ngModel)]="search">
-      <button class="bt1" mat-raised-button color="primary" [disabled]="no_show"> Search</button>
     </form>
   </div>
 </div>

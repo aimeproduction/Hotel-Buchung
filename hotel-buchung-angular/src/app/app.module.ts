@@ -22,6 +22,10 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgTemplateLoadingErrorComponent } from './components/ng-template-loading-error/ng-template-loading-error.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     ListBuchungComponent,
     NeueBuchungComponent,
     EditBuchungComponent,
-    DeleteBuchungComponent
+    DeleteBuchungComponent,
+    LoginComponent,
+    NavbarComponent,
+    NgTemplateLoadingErrorComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
