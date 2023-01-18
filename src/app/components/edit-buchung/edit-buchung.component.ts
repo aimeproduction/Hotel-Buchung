@@ -7,6 +7,7 @@ import {Customer} from "../../models/customer";
 import {DialogData} from "../../Models/dialogData";
 import {Observable, throwError} from "rxjs";
 import {catchError, tap} from "rxjs/operators";
+
 @Component({
   selector: 'app-edit-buchung',
   templateUrl: './edit-buchung.component.html',
@@ -19,9 +20,9 @@ export class EditBuchungComponent {
   errorObject = ''
   datas: any;
   saveData = true;
-  customer_id: number =0;
+  customer_id: number = 0;
   errorDate!: string;
-  roomstatus ='';
+  roomstatus = '';
 
   constructor(public dialogRef: MatDialogRef<EditBuchungComponent>,
               // tslint:disable-next-line:max-line-length
@@ -66,14 +67,13 @@ export class EditBuchungComponent {
 
   update_data_student(form: FormGroup) {
 
-    if(form.value.Startdate > form.value.Enddate){
+    if (form.value.Startdate > form.value.Enddate) {
 
-      this.errorDate ='The start date is further away than the end date. Please change the dates';
-    }
-    else{
-      this.service.getAllData().subscribe(data =>{
+      this.errorDate = 'The start date is further away than the end date. Please change the dates';
+    } else {
+      this.service.getAllData().subscribe(data => {
         this.datas = data;
-        for(let i =0; i< data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
           if (form.value.Roomnumber == data[i].Roomnumber && form.value.Bookingnumber == data[i].Bookingnumber) {
             this.saveData = true;
             this.roomstatus = '';
@@ -85,8 +85,7 @@ export class EditBuchungComponent {
                 form.value.Enddate <= data[i].Startdate && form.value.Enddate <= data[i].Enddate)) {
               this.roomstatus = '';
               this.saveData = true;
-            }
-            else {
+            } else {
               this.saveData = false;
               this.roomstatus = 'Sorry, this room is not free for this period. Please choose another period.'
               break;
@@ -97,20 +96,20 @@ export class EditBuchungComponent {
 
         if (this.saveData) {
 
-          this.service.update_customer_data(this.form.value, this.customer_id).subscribe( {
+          this.service.update_customer_data(this.form.value, this.customer_id).subscribe({
             next: () => {
               this._snackBar.open('The data has been successfully modified!', 'Okay', {
                 duration: 5000,
                 verticalPosition: 'top'
               })
             },
-              error: () =>{
+            error: () => {
               alert("Error, failure of the operation")
             },
-              complete: () =>{
+            complete: () => {
               this.dialogRef.close();
             }
-            })
+          })
         }
 
       });

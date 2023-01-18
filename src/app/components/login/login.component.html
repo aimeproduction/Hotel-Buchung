@@ -1,4 +1,3 @@
-
 <html>
 <head>
   <meta charset="UTF-8">
@@ -10,11 +9,14 @@
 <form [formGroup]="formular">
   <h1>Connect you!</h1>
   <div class="inputs_container">
-    <input type="text" formControlName="user" class="form-control" placeholder="Enter the username" data-cy = "input-user">
-    <input type="password" formControlName="password" class="form-control" placeholder="Enter the password" data-cy = "input-password">
+    <input type="text" formControlName="user" class="form-control" placeholder="Enter the username"
+           data-cy="input-user">
+    <input type="password" formControlName="password" class="form-control" placeholder="Enter the password"
+           data-cy="input-password">
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="!formular.valid"
-          (click)="login(formular.value.user, formular.value.password)" data-cy = "login-button">Login</button>
+          (click)="login(formular.value.user, formular.value.password)" data-cy="login-button">Login
+  </button>
   <p>{{errorMessage}}</p>
 </form>
 </body>

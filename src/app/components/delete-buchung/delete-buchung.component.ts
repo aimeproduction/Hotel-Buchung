@@ -1,4 +1,3 @@
-
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DialogData} from "../../Models/dialogData";
@@ -14,7 +13,7 @@ import {catchError} from "rxjs/operators";
   styleUrls: ['./delete-buchung.component.css']
 })
 export class DeleteBuchungComponent {
-  index: number=0;
+  index: number = 0;
   customer_id = 0;
   data_api$!: Observable<Customer>;
 
@@ -57,16 +56,17 @@ export class DeleteBuchungComponent {
           verticalPosition: 'top'
         })
       },
-      error: () =>{
+      error: () => {
         alert("Error, failure of the operation")
       },
-      complete: () =>{
-this.ClickClose()
+      complete: () => {
+        this.ClickClose()
       }
 
     })
   }
-  deletebookedroom(){
+
+  deletebookedroom() {
     this.service.deletebookedroom(this.index)
   }
 }

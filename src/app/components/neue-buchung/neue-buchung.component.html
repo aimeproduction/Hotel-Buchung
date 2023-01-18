@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <div>
-<app-navbar></app-navbar>
+  <app-navbar></app-navbar>
 </div>
 <head>
   <title></title>
@@ -31,84 +31,221 @@
           <p class="errordateMessage"> {{errorform}}</p>
         </div>
       </div>
-<br><br>
+      <br><br>
 
       <div *ngIf="showHide">
-      <div *ngIf="freerooms">
-        <table class="user-data">
-          <tr>
-            <td>
-              <mat-form-field appearance="fill">
-                <mat-select formControlName="Roomnumber" placeholder="Free rooms">
-                  <mat-option *ngFor="let Freeroom of freerooms" value="{{Freeroom}}">{{Freeroom}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td>
-              <mat-form-field appearance="fill">
-                <mat-select formControlName="Gender" placeholder="Gender">
-                  <mat-option [value]="'Mr.'">Mr.</mat-option>
-                  <mat-option [value]="'Ms.'">Ms.</mat-option>
-                  <mat-option [value]="'Divers.'">Divers.</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </td>
-          </tr>
-          <tr></tr><tr></tr>
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Your firstname" formControlName="Firstname" required>
-              </mat-form-field>
-            </td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Your lastname" formControlName="Lastname" required>
-              </mat-form-field>
-            </td>
-          </tr>
-          <tr></tr><tr></tr>
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width">
-                <input type="email" matInput placeholder="Your email" formControlName="Email" required>
-              </mat-form-field>
-            </td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td>
-              <mat-form-field class="example-full-width">
-                <input type="number" matInput placeholder="Your phone number" formControlName="Phonenummer" required>
-              </mat-form-field>
-            </td>
-          </tr>
-          <tr></tr><tr></tr>
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width">
-                <input type="date" matInput placeholder="Your arrival date" formControlName="Startdate" required>
-              </mat-form-field>
-            </td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td>
-              <mat-form-field class="example-full-width">
-                <input type="date" matInput placeholder="Your departure date" formControlName="Enddate" required>
-              </mat-form-field>
-            </td>
-          </tr>
-        </table>
+        <div *ngIf="freerooms">
+          <table class="user-data">
+            <tr>
+              <td>
+                <mat-form-field appearance="fill">
+                  <mat-select formControlName="Roomnumber" placeholder="Free rooms">
+                    <mat-option *ngFor="let Freeroom of freerooms" value="{{Freeroom}}">{{Freeroom}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <mat-form-field appearance="fill">
+                  <mat-select formControlName="Gender" placeholder="Gender">
+                    <mat-option [value]="'Mr.'">Mr.</mat-option>
+                    <mat-option [value]="'Ms.'">Ms.</mat-option>
+                    <mat-option [value]="'Divers.'">Divers.</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Your firstname" formControlName="Firstname" required>
+                </mat-form-field>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Your lastname" formControlName="Lastname" required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input type="email" matInput placeholder="Your email" formControlName="Email" required>
+                </mat-form-field>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input type="number" matInput placeholder="Your phone number" formControlName="Phonenummer" required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input type="date" matInput placeholder="Your arrival date" formControlName="Startdate" required>
+                </mat-form-field>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input type="date" matInput placeholder="Your departure date" formControlName="Enddate" required>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
           <div class="button2">
-            <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onSubmit()">Booking of the room</button>
+            <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onSubmit()">Booking of the
+              room
+            </button>
           </div>
         </div>
       </div>

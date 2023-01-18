@@ -14,51 +14,48 @@ export class NeueBuchungComponent {
   booking_first_part = 'Bo'
   booking_last_part = 1;
   public form!: FormGroup;
-  errorform ='';
+  errorform = '';
   data: any;
   temp!: number;
-  roomNumber: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+  roomNumber: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
   reservedrooms!: number[];
   freerooms!: number[];
   errorDate!: string;
-  bookingnumber ='';
-  constructor(private route: Router, private fb: FormBuilder, private service: HotelServiceService, private  _snackBar: MatSnackBar) {
+  bookingnumber = '';
+
+  constructor(private route: Router, private fb: FormBuilder, private service: HotelServiceService, private _snackBar: MatSnackBar) {
   }
 
-  Roomsearch(form: FormGroup){
-    if(!form.value.Startdate|| !form.value.Enddate){
-      this.errorform ='Please enter a period';
-      this.errorDate =''
-    }
-    else if(form.value.Startdate > form.value.Enddate){
+  Roomsearch(form: FormGroup) {
+    if (!form.value.Startdate || !form.value.Enddate) {
+      this.errorform = 'Please enter a period';
+      this.errorDate = ''
+    } else if (form.value.Startdate > form.value.Enddate) {
 
-     this.errorDate ='The start date is further away than the end date. Please change the dates';
-     this.errorform =''
-    }
-    else{
-      this.showHide =true;
-      this.errorform =''
-      this.errorDate ='';
+      this.errorDate = 'The start date is further away than the end date. Please change the dates';
+      this.errorform = ''
+    } else {
+      this.showHide = true;
+      this.errorform = ''
+      this.errorDate = '';
       this.roomNumber = JSON.parse(<string>localStorage.getItem("roomNumber")) ?? [];
       this.reservedrooms = JSON.parse(<string>localStorage.getItem("reservedrooms")) ?? [];
       this.freerooms = this.roomNumber.filter(x => this.reservedrooms.indexOf(x) === -1);
-      this.freerooms.sort((a, b)=> a-b);
-      this.service.getAllData().subscribe(data =>{
-      this.data = data;
-        for(let i =0; i< data.length; i++){
-          if((form.value.Startdate >= data[i].Startdate && form.value.Startdate >= data[i].Enddate &&
+      this.freerooms.sort((a, b) => a - b);
+      this.service.getAllData().subscribe(data => {
+        this.data = data;
+        for (let i = 0; i < data.length; i++) {
+          if ((form.value.Startdate >= data[i].Startdate && form.value.Startdate >= data[i].Enddate &&
               form.value.Enddate >= data[i].Startdate && form.value.Enddate >= data[i].Enddate) ||
             (form.value.Startdate <= data[i].Startdate && form.value.Startdate <= data[i].Enddate &&
-              form.value.Enddate <= data[i].Startdate && form.value.Enddate <= data[i].Enddate)){
+              form.value.Enddate <= data[i].Startdate && form.value.Enddate <= data[i].Enddate)) {
             this.freerooms.push(this.reservedrooms[i]);
             this.freerooms = Array.from(new Set(this.freerooms))
-            this.freerooms.sort((a, b)=> a-b);
+            this.freerooms.sort((a, b) => a - b);
           }
         }
       });
     }
-// this.array_data = JSON.parse(<string>localStorage.getItem('data'));
-
 
 
   }
@@ -76,25 +73,25 @@ export class NeueBuchungComponent {
         this.bookingnumber = this.booking_first_part + this.booking_last_part + this.temp;
       }
 
-    this.bookingnumber = this.booking_first_part + this.booking_last_part + this.temp;
+      this.bookingnumber = this.booking_first_part + this.booking_last_part + this.temp;
       this.form.value.Bookingnumber = this.bookingnumber;
-    console.log('number 1 '+this.bookingnumber)
-    this.form.value.Roomnumber = (JSON.parse(this.form.value.Roomnumber))
-    this.service.post_customer_data(this.form.value).subscribe( {
-      next: () => {
-        this._snackBar.open('The reservation has been successfully completed!', 'Okay', {
-          duration: 5000,
-          verticalPosition: 'top'
-        })
-      },
-      error: () =>{
-        alert("Error, failure of the operation")
-      },
-      complete: () =>{
-        this.form.reset();
-        this.route.navigate(['neue-buchung'])
-        this.showHide =false;
-      }
+      console.log('number 1 ' + this.bookingnumber)
+      this.form.value.Roomnumber = (JSON.parse(this.form.value.Roomnumber))
+      this.service.post_customer_data(this.form.value).subscribe({
+        next: () => {
+          this._snackBar.open('The reservation has been successfully completed!', 'Okay', {
+            duration: 5000,
+            verticalPosition: 'top'
+          })
+        },
+        error: () => {
+          alert("Error, failure of the operation")
+        },
+        complete: () => {
+          this.form.reset();
+          this.route.navigate(['neue-buchung'])
+          this.showHide = false;
+        }
       })
 
     })
@@ -102,7 +99,6 @@ export class NeueBuchungComponent {
     localStorage.setItem("reservedrooms", JSON.stringify(this.reservedrooms))
     this.route.navigate(['neue-buchung'])
   }
-
 
 
   ngOnInit(): void {
@@ -118,13 +114,12 @@ export class NeueBuchungComponent {
       Enddate: ['', Validators.required]
     });
     localStorage.setItem("roomNumber", JSON.stringify(this.roomNumber));
-    this.reservedrooms =[]
-    this.service.getAllData().subscribe(data =>{
-      if(data.length ==0){
+    this.reservedrooms = []
+    this.service.getAllData().subscribe(data => {
+      if (data.length == 0) {
         this.reservedrooms = [];
         localStorage.setItem("reservedrooms", JSON.stringify(this.reservedrooms))
-      }
-      else {
+      } else {
         for (let i = 0; i < data.length; i++) {
           this.reservedrooms.push(data[i].Roomnumber)
 
