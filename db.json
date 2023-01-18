@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "Bookingnumber": "Bo10",
+      "Gender": "Ms.",
+      "Roomnumber": 4,
+      "Firstname": "dfgfd14",
+      "Lastname": "dfsfsdf",
+      "Email": "ddfdsfs",
+      "Phonenummer": 54212454,
+      "Startdate": "0001-10-10",
+      "Enddate": "0011-01-10",
+      "id": 1
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
