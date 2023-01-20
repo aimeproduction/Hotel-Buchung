@@ -25,7 +25,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { DatePipe } from '@angular/common'
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +56,7 @@ import { HomeComponent } from './components/home/home.component';
     MatDialogModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

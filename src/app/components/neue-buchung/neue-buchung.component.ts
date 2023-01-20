@@ -3,6 +3,7 @@ import {HotelServiceService} from "../../service/hotel-service.service";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-neue-buchung',
@@ -20,24 +21,32 @@ export class NeueBuchungComponent {
   roomNumber: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
   reservedrooms!: number[];
   freerooms!: number[];
-  errorDate!: string;
   bookingnumber = '';
+todayDate = new Date();
+  latest_date!: any;
+  constructor(public datepipe: DatePipe, private route: Router, private fb: FormBuilder, private service: HotelServiceService, private _snackBar: MatSnackBar) {
+  }
 
-  constructor(private route: Router, private fb: FormBuilder, private service: HotelServiceService, private _snackBar: MatSnackBar) {
+  DateFunction(){
+    this.latest_date =this.datepipe.transform(this.todayDate, 'yyyy-MM-dd');
   }
 
   Roomsearch(form: FormGroup) {
+    this.DateFunction()
     if (!form.value.Startdate || !form.value.Enddate) {
       this.errorform = 'Please enter a period';
-      this.errorDate = ''
-    } else if (form.value.Startdate > form.value.Enddate) {
-
-      this.errorDate = 'The start date is further away than the end date. Please change the dates';
-      this.errorform = ''
+    }
+    else if(form.value.Startdate < this.latest_date){
+      this.errorform ='It is not possible to make reservations for past dates'
+    }
+    else if(form.value.Startdate == form.value.Enddate){
+      this.errorform='Sorry, you have to stay at least one night'
+    }
+    else if (form.value.Startdate > form.value.Enddate) {
+      this.errorform = 'The start date is further away than the end date. Please change the dates'
     } else {
       this.showHide = true;
       this.errorform = ''
-      this.errorDate = '';
       this.roomNumber = JSON.parse(<string>localStorage.getItem("roomNumber")) ?? [];
       this.reservedrooms = JSON.parse(<string>localStorage.getItem("reservedrooms")) ?? [];
       this.freerooms = this.roomNumber.filter(x => this.reservedrooms.indexOf(x) === -1);

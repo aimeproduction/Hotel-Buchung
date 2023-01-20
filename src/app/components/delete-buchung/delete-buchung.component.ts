@@ -55,6 +55,7 @@ export class DeleteBuchungComponent {
           duration: 5000,
           verticalPosition: 'top'
         })
+        this.deletebookedroom()
       },
       error: () => {
         alert("Error, failure of the operation")
