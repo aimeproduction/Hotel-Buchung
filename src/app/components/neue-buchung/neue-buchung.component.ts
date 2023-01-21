@@ -5,6 +5,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 import { DatePipe } from '@angular/common'
 
+
 @Component({
   selector: 'app-neue-buchung',
   templateUrl: './neue-buchung.component.html',
@@ -24,7 +25,42 @@ export class NeueBuchungComponent {
   bookingnumber = '';
 todayDate = new Date();
   latest_date!: any;
-  constructor(public datepipe: DatePipe, private route: Router, private fb: FormBuilder, private service: HotelServiceService, private _snackBar: MatSnackBar) {
+  timer!: number;
+  constructor(public datepipe: DatePipe, private route: Router, private fb: FormBuilder,
+              private service: HotelServiceService, private _snackBar: MatSnackBar) {
+  }
+
+  ngOnInit(): void {
+
+
+    this.form = this.fb.group({
+      Bookingnumber: [this.bookingnumber],
+      Gender: ['', Validators.required],
+      Roomnumber: ['', Validators.required],
+      Firstname: ['', [Validators.required, Validators.minLength(4)]],
+      Lastname: ['', Validators.required],
+      Email: ['', Validators.required],
+      Phonenummer: ['', Validators.required],
+      Startdate: ['', Validators.required],
+      Enddate: ['', Validators.required]
+    });
+    localStorage.setItem("roomNumber", JSON.stringify(this.roomNumber));
+    this.reservedrooms = []
+    this.service.getAllData().subscribe(data => {
+      if (data.length == 0) {
+        this.reservedrooms = [];
+        localStorage.setItem("reservedrooms", JSON.stringify(this.reservedrooms))
+      } else {
+        for (let i = 0; i < data.length; i++) {
+          this.reservedrooms.push(data[i].Roomnumber)
+
+          localStorage.setItem("reservedrooms", JSON.stringify(this.reservedrooms))
+        }
+      }
+
+
+    });
+
   }
 
   DateFunction(){
@@ -110,36 +146,7 @@ todayDate = new Date();
   }
 
 
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      Bookingnumber: [this.bookingnumber],
-      Gender: ['', Validators.required],
-      Roomnumber: ['', Validators.required],
-      Firstname: ['', [Validators.required, Validators.minLength(4)]],
-      Lastname: ['', Validators.required],
-      Email: ['', Validators.required],
-      Phonenummer: ['', Validators.required],
-      Startdate: ['', Validators.required],
-      Enddate: ['', Validators.required]
-    });
-    localStorage.setItem("roomNumber", JSON.stringify(this.roomNumber));
-    this.reservedrooms = []
-    this.service.getAllData().subscribe(data => {
-      if (data.length == 0) {
-        this.reservedrooms = [];
-        localStorage.setItem("reservedrooms", JSON.stringify(this.reservedrooms))
-      } else {
-        for (let i = 0; i < data.length; i++) {
-          this.reservedrooms.push(data[i].Roomnumber)
 
-          localStorage.setItem("reservedrooms", JSON.stringify(this.reservedrooms))
-        }
-      }
-
-
-    });
-
-  }
 
 
 }

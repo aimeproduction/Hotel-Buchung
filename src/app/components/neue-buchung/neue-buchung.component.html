@@ -32,223 +32,90 @@
 
       <div *ngIf="showHide">
         <div *ngIf="freerooms">
-          <table class="user-data">
-            <tr>
-              <td>
-                <mat-form-field appearance="fill">
-                  <mat-select formControlName="Roomnumber" placeholder="Free rooms">
-                    <mat-option *ngFor="let Freeroom of freerooms" value="{{Freeroom}}">{{Freeroom}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <mat-form-field appearance="fill">
-                  <mat-select formControlName="Gender" placeholder="Gender">
-                    <mat-option [value]="'Mr.'">Mr.</mat-option>
-                    <mat-option [value]="'Ms.'">Ms.</mat-option>
-                    <mat-option [value]="'Divers.'">Divers.</mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </td>
-            </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Your firstname" formControlName="Firstname" required>
-                </mat-form-field>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Your lastname" formControlName="Lastname" required>
-                </mat-form-field>
-              </td>
-            </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <input type="email" matInput placeholder="Your email" formControlName="Email" required>
-                </mat-form-field>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <input type="number" matInput placeholder="Your phone number" formControlName="Phonenummer" required>
-                </mat-form-field>
-              </td>
-            </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <input type="date" matInput placeholder="Your arrival date" formControlName="Startdate" required>
-                </mat-form-field>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <input type="date" matInput placeholder="Your departure date" formControlName="Enddate" required>
-                </mat-form-field>
-              </td>
-            </tr>
-          </table>
-          <div class="button2">
-            <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onSubmit()">Booking of the
-              room
-            </button>
+
+            <div class="fcf-body">
+
+              <div id="fcf-form">
+                <h3 class="fcf-h3">Customer infos</h3>
+
+                <form id="fcf-form-id" class="fcf-form-class" [formGroup]="form">
+                  <br><br>
+
+                  <table>
+                    <tr>
+                      <td>
+                  <mat-form-field appearance="fill">
+                    <mat-select formControlName="Roomnumber" placeholder="Free rooms">
+                      <mat-option *ngFor="let Freeroom of freerooms" value="{{Freeroom}}">{{Freeroom}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                      </td>
+                      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                      <td>
+                  <mat-form-field appearance="fill">
+                    <mat-select formControlName="Gender" placeholder="Gender">
+                      <mat-option [value]="'Mr.'">Mr.</mat-option>
+                      <mat-option [value]="'Ms.'">Ms.</mat-option>
+                      <mat-option [value]="'Divers.'">Divers.</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                      </td>
+                    </tr>
+                  </table>
+                  <div class="fcf-form-group">
+                    <label for="Firstname" class="fcf-label">Firstname</label>
+                    <div class="fcf-input-group">
+                      <input type="text" id="Firstname" formControlName="Firstname" name="Name" class="fcf-form-control" required>
+                    </div>
+                  </div>
+                  <div class="fcf-form-group">
+                    <label for="Lastname" class="fcf-label">Lastname</label>
+                    <div class="fcf-input-group">
+                      <input type="text" id="Lastname" formControlName="Lastname" name="Name" class="fcf-form-control" required>
+                    </div>
+                  </div>
+                  <div class="fcf-form-group">
+                    <label for="Phonenummer" class="fcf-label">Phone number</label>
+                    <div class="fcf-input-group">
+                      <input type="number" id="Phonenummer" formControlName="Phonenummer" name="Name" class="fcf-form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="fcf-form-group">
+                    <label for="Email" class="fcf-label">Email address</label>
+                    <div class="fcf-input-group">
+                      <input type="email" id="Email" formControlName="Email" name="Email" class="fcf-form-control" required>
+                    </div>
+                  </div>
+                  <div class="fcf-form-group">
+                    <label for="Startdate" class="fcf-label">Arrival date</label>
+                    <div class="fcf-input-group">
+                      <input type="date" id="Startdate" formControlName="Startdate" name="Startdate" class="fcf-form-control" required>
+                    </div>
+                  </div>
+                  <div class="fcf-form-group">
+                  <label for="Enddate" class="fcf-label">Departure date</label>
+                  <div class="fcf-input-group">
+                    <input type="date" id="Enddate" formControlName="Enddate" name="Enddate" class="fcf-form-control" required>
+                  </div>
+              </div>
+
+                  <br><br>
+                  <div class="fcf-form-group">
+                    <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block" [disabled]="!form.valid" (click)="onSubmit()">Booking of the
+                      room</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+
           </div>
         </div>
-      </div>
     </form>
+      </div>
   </div>
-</div>
 
 </body>
 </html>
