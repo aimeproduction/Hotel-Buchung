@@ -66,16 +66,25 @@
         <td class="vertical-align ">{{item.Enddate}}</td>
         <td class="vertical-align">
           <button mat-icon-button matTooltip="bearbeiten" color="primary" aria-label="bearbeiten"
-                  (click)="update_student(item.id)">
+                  (click)="update_student(10)">
             <mat-icon>mode_edit_outline</mat-icon>
           </button> &nbsp;
           <button mat-icon-button matTooltip="löschen" color="warn" aria-label="löschen"
-                  (click)="delete_student(item.id, i)">
+                  (click)="delete_student(10, i)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
       </tr>
+<tr>
+  <td>
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="OnTableChange($event)"></pagination-controls>
+  </td>
+</tr>
     </table>
+
   </ng-container>
   <ng-template #loadingOrError>
     <ng-container *ngIf="errorObject; else loading">

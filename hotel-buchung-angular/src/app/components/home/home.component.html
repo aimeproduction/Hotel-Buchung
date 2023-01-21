@@ -4,3 +4,61 @@
 <head>
   <title></title>
 </head>
+<body>
+<div class ="first-part">
+  <br><br>
+
+  <br>
+  <p class="text-first-part"> This web application allows you to manage hotel room reservations in an establishment.
+    The application consists of 3 pages:<br>
+  The home page: This page is a kind of user manual and you can also contact
+  the web developer through the form in case of problems.
+   The page new booking: On this page it is possible to make a new booking for a client.
+    For this purpose, information about the customer such as name, surname, departure and arrival
+    dates are required. A reservation cannot be made for a date earlier than the date of the reservation.
+  A reservation can only be made for a minimum of one night.
+  The page list of booking: On this page it is possible to make changes to reservations that have already
+    been made. The personal information of the client can for example be changed in case it has been filled
+    in incorrectly. It is also possible to change the room number that has been booked by the client,
+    provided that the new room chosen by the client is free during the period of his stay. On the same
+  page it is also possible to cancel a reservation.</p>
+</div>
+<div class ="second-part">
+
+
+  <div class="fcf-body">
+
+    <div id="fcf-form">
+      <h3 class="fcf-h3">Contact me</h3>
+
+      <form id="fcf-form-id" class="fcf-form-class" [formGroup]="form" (ngSubmit)="SendMail(form)">
+
+        <div class="fcf-form-group">
+          <label for="Name" class="fcf-label">Your name</label>
+          <div class="fcf-input-group">
+            <input type="text" id="Name" formControlName="Name" name="Name" class="fcf-form-control" required>
+          </div>
+        </div>
+
+        <div class="fcf-form-group">
+          <label for="Email" class="fcf-label">Your email address</label>
+          <div class="fcf-input-group">
+            <input type="email" id="Email" formControlName="Email" name="Email" class="fcf-form-control" required>
+          </div>
+        </div>
+
+        <div class="fcf-form-group">
+          <label for="Message" class="fcf-label">Your message</label>
+          <div class="fcf-input-group">
+            <textarea id="Message" formControlName="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+          </div>
+        </div>
+
+        <div class="fcf-form-group">
+          <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>

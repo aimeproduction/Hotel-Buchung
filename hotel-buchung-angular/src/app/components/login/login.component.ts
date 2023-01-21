@@ -13,6 +13,7 @@ export class LoginComponent {
   errorMessage = '';
   count = 0;
   leavePage = false;
+
   constructor(private route: Router, private fb: UntypedFormBuilder, private service: HotelServiceService) {
 
   }
@@ -24,18 +25,17 @@ export class LoginComponent {
     });
   }
 
-  login(user: string, password: string){
-    if (user === this.service.firstUser && password === this.service.firstPassword){
+  login(user: string, password: string) {
+    if (user === this.service.firstUser && password === this.service.firstPassword) {
       this.route.navigate(['list-buchung']);
       this.errorMessage = '';
       this.service.firstUserLogged = true;
-      this.service.isSomebodyLogged =true;
+      this.service.isSomebodyLogged = true;
       this.leavePage = true;
-    }
-    else if (user === this.service.secondUser && password=== this.service.secondPassword){
+    } else if (user === this.service.secondUser && password === this.service.secondPassword) {
       this.route.navigate(['list-buchung']);
       this.errorMessage = '';
-      this.service.isSomebodyLogged =true;
+      this.service.isSomebodyLogged = true;
       this.service.firstUserLogged = false;
       this.leavePage = true;
     } else {

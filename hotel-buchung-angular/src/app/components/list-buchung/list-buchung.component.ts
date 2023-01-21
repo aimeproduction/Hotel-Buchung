@@ -14,18 +14,21 @@ import {EditBuchungComponent} from "../edit-buchung/edit-buchung.component";
   styleUrls: ['./list-buchung.component.css']
 })
 export class ListBuchungComponent {
+  title='pagination'
+  page: number=1;
+  count: number=0;
+  tablesize: number =10;
+  tablsizes: number[]=[5,10,15,20]
   index: number =0;
   customer_id: number = 0;
-  no_show = true;
   data$!: Observable<Customer[]>;
   search!: string;
   public form_search!: FormGroup;
-  test = false;
   errorObject = '';
-  dateoftheday = new Date();
 
   constructor(private _snackBar: MatSnackBar,
               public dialog: MatDialog, private service: HotelServiceService, private fb: FormBuilder) {
+
   }
 
   ngOnInit(): void {
@@ -48,7 +51,11 @@ export class ListBuchungComponent {
     });
   }
 
-
+  OnTableChange(event: any){
+    this.tablesize= event.target.value;
+    this.page=1;
+    this.data$;
+  }
   update_student(index: number) {
     this.customer_id = index;
     this.dialog.open(EditBuchungComponent, {

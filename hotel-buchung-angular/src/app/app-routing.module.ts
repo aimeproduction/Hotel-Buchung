@@ -6,6 +6,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {ProtectLoginGuard} from "./components/login/protect-login.guard";
 import {HomeComponent} from "./components/home/home.component";
 
+
 const routes: Routes = [
   {
     path: '',
