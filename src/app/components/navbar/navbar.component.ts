@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, HostListener, ViewChild} from '@angular/core';
 import {HotelServiceService} from "../../service/hotel-service.service";
+import {CountdownComponent} from "ngx-countdown";
 
 @Component({
   selector: 'app-navbar',
@@ -7,14 +8,19 @@ import {HotelServiceService} from "../../service/hotel-service.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  @ViewChild('cd', { static: false }) private countdown!: CountdownComponent;
+
   timer!: number;
   constructor(private service: HotelServiceService) {
   }
 
   ngOnInit(): void{
     this.timer = this.service.timer;
+this.service.LogOut();
   }
-  handleEvent(event: any){
-    window.addEventListener("mousemove", ()=>this.service.cancelTimer())
-  }
+@HostListener('window:mousemove')
+OnMouseMove(){
+  this.countdown.restart();
+}
+
 }

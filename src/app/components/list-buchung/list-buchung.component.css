@@ -36,7 +36,9 @@ html{
 .theinput{
   margin-left: 550px;
   width: 200px;
-
+}
+.pagination-div{
+  margin-top: auto;
 }
 .example-full-width {
   width: 100%;

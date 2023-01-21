@@ -20,16 +20,13 @@ export class HotelServiceService {
   isSomebodyLogged = false;
   reservedrooms!: number[];
   BaseUrl = 'http://localhost:3000/posts';
-  timer =300;
+  timer =1800;
   constructor(public dialog: MatDialog,private route: Router, private  http: HttpClient, private bnIdle: BnNgIdleService) {
 
   }
 
-  cancelTimer(){
-    this.timer =300;
-  }
 LogOut(){
-  this.bnIdle.startWatching(300).subscribe((res) => {
+  this.bnIdle.startWatching(1801).subscribe((res) => {
     if (res) {
       this.route.navigate(['login'])
     }

@@ -31,6 +31,7 @@ import { DialogComponent } from './components/dialog/dialog.component'
 import {CountdownModule} from "ngx-countdown";
 import {NgxPaginationModule} from "ngx-pagination";
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
     MatSnackBarModule,
     Ng2SearchPipeModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatPaginatorModule
   ],
   providers: [DatePipe, BnNgIdleService],
   bootstrap: [AppComponent]

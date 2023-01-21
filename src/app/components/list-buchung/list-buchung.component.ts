@@ -33,12 +33,11 @@ export class ListBuchungComponent {
 
   ngOnInit(): void {
     this.refresh();
-
-
     this.form_search = this.fb.group({
       search: [''],
     });
   }
+
 
   delete_student( id: number, index: number) {
     this.index = index;
@@ -51,11 +50,6 @@ export class ListBuchungComponent {
     });
   }
 
-  OnTableChange(event: any){
-    this.tablesize= event.target.value;
-    this.page=1;
-    this.data$;
-  }
   update_student(index: number) {
     this.customer_id = index;
     this.dialog.open(EditBuchungComponent, {

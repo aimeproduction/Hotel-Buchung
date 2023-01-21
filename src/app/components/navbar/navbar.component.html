@@ -5,7 +5,7 @@
   <button class="new-book" mat-button [routerLinkActive]="'active'"  routerLink="/neue-buchung">New booking</button>
   <button class="new-book" mat-button [routerLinkActive]="'active'"  routerLink="/list-buchung">List of bookings</button>
   <button class="new-book" mat-button [routerLinkActive]="'active'"  routerLink="/chatbot">Entertainment</button>
-  <countdown class="Timerlogout" [config]="{leftTime: timer}" (event)="handleEvent($event)"></countdown>
+  <countdown #cd class="Timerlogout" [config]="{leftTime: timer}"></countdown>
   <button class="new-book1" mat-button [routerLinkActive]="'active'"  routerLink="/login"><p class="logout"> Logout</p></button>
 </mat-toolbar>
 </nav>
