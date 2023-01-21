@@ -1,11 +1,8 @@
-
-import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DialogData} from "../../Models/dialogData";
 import {HotelServiceService} from "../../service/hotel-service.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
 import {Observable, throwError} from "rxjs";
 import {Customer} from "../../models/customer";
 import {catchError} from "rxjs/operators";
@@ -16,10 +13,9 @@ import {catchError} from "rxjs/operators";
   styleUrls: ['./delete-buchung.component.css']
 })
 export class DeleteBuchungComponent {
-  index: number=0;
+  index: number = 0;
   customer_id = 0;
   data_api$!: Observable<Customer>;
-  date: Date = new Date();
 
   errorObject = ''
 
@@ -55,21 +51,23 @@ export class DeleteBuchungComponent {
   delete_student() {
     this.service.delete_customer_data(this.customer_id).subscribe({
       next: () => {
-        this._snackBar.open('The student has been successfully removed!', 'Okay', {
+        this._snackBar.open('The booking has been successfully deleted!', 'Okay', {
           duration: 5000,
           verticalPosition: 'top'
         })
+        this.deletebookedroom()
       },
-      error: () =>{
+      error: () => {
         alert("Error, failure of the operation")
       },
-      complete: () =>{
-        this.dialogRef.close();
+      complete: () => {
+        this.ClickClose()
       }
 
     })
   }
-  deletebookedroom(){
+
+  deletebookedroom() {
     this.service.deletebookedroom(this.index)
   }
 }
