@@ -25,13 +25,13 @@ export class NeueBuchungComponent {
   bookingnumber = '';
 todayDate = new Date();
   latest_date!: any;
-  timer!: number;
+
   constructor(public datepipe: DatePipe, private route: Router, private fb: FormBuilder,
               private service: HotelServiceService, private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
-
+  this.service.LogOut();
 
     this.form = this.fb.group({
       Bookingnumber: [this.bookingnumber],
@@ -57,11 +57,9 @@ todayDate = new Date();
           localStorage.setItem("reservedrooms", JSON.stringify(this.reservedrooms))
         }
       }
-
-
     });
-
   }
+
 
   DateFunction(){
     this.latest_date =this.datepipe.transform(this.todayDate, 'yyyy-MM-dd');

@@ -30,6 +30,7 @@ import { DialogComponent } from './components/dialog/dialog.component'
 
 import {CountdownModule} from "ngx-countdown";
 import {NgxPaginationModule} from "ngx-pagination";
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     LoginComponent,
     NavbarComponent,
     HomeComponent,
-    DialogComponent
+    DialogComponent,
+    ChatbotComponent
   ],
   imports: [
     NgxPaginationModule,

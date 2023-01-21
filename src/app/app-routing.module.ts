@@ -5,14 +5,24 @@ import {NeueBuchungComponent} from "./components/neue-buchung/neue-buchung.compo
 import {LoginComponent} from "./components/login/login.component";
 import {ProtectLoginGuard} from "./components/login/protect-login.guard";
 import {HomeComponent} from "./components/home/home.component";
+import {ChatbotComponent} from "./components/chatbot/chatbot.component";
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'neue-buchung',
+    redirectTo: 'login',
     pathMatch: 'full'
 
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    //  canDeactivate: [ProtectLoginGuard]
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: 'neue-buchung',
@@ -22,15 +32,11 @@ const routes: Routes = [
     path: 'list-buchung',
     component: ListBuchungComponent,
   },
+
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'chatbot',
+    component: ChatbotComponent,
   },
-  {
-    path: 'login',
-    component: LoginComponent,
-  //  canDeactivate: [ProtectLoginGuard]
-  }
 ];
 
 @NgModule({

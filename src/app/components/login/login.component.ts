@@ -27,13 +27,13 @@ export class LoginComponent {
 
   login(user: string, password: string) {
     if (user === this.service.firstUser && password === this.service.firstPassword) {
-      this.route.navigate(['list-buchung']);
+      this.route.navigate(['home']);
       this.errorMessage = '';
       this.service.firstUserLogged = true;
       this.service.isSomebodyLogged = true;
       this.leavePage = true;
     } else if (user === this.service.secondUser && password === this.service.secondPassword) {
-      this.route.navigate(['list-buchung']);
+      this.route.navigate(['home']);
       this.errorMessage = '';
       this.service.isSomebodyLogged = true;
       this.service.firstUserLogged = false;

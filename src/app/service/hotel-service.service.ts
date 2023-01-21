@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {map, Observable, tap} from "rxjs";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Customer} from "../models/customer";
 import {BnNgIdleService} from "bn-ng-idle";
 import {Router} from "@angular/router";
-import {DeleteBuchungComponent} from "../components/delete-buchung/delete-buchung.component";
+
 import {MatDialog} from "@angular/material/dialog";
-import {DialogComponent} from "../components/dialog/dialog.component";
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +20,21 @@ export class HotelServiceService {
   isSomebodyLogged = false;
   reservedrooms!: number[];
   BaseUrl = 'http://localhost:3000/posts';
+  timer =300;
   constructor(public dialog: MatDialog,private route: Router, private  http: HttpClient, private bnIdle: BnNgIdleService) {
 
   }
+
+  cancelTimer(){
+    this.timer =300;
+  }
+LogOut(){
+  this.bnIdle.startWatching(300).subscribe((res) => {
+    if (res) {
+      this.route.navigate(['login'])
+    }
+  });
+}
   getAllData(): Observable<Customer[]>{
     return this.http.get<Customer[]>("http://localhost:3000/posts").pipe(tap(res =>{
       console.log(res)

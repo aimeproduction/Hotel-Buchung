@@ -8,17 +8,19 @@
 
 }
 .home{
-  margin-left: 370px;
+  margin-left: 290px;
   font-size: 18px;
 }
 .new-book{
-  margin-left: 10px;
+  margin-left: 15px;
   font-size: 18px;
-
+}
+.Timerlogout{
+  margin-left: 250px;
+  font-size: 13px;
+  color: yellow;
 }
 .new-book1{
-
-  margin-left: 400px;
   margin-top: auto;
   font-size: 18px;
 }
