@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BnNgIdleService } from 'bn-ng-idle';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListBuchungComponent } from './components/list-buchung/list-buchung.component';
@@ -24,9 +24,12 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { NgTemplateLoadingErrorComponent } from './components/ng-template-loading-error/ng-template-loading-error.component';
 import { HomeComponent } from './components/home/home.component';
+import { DatePipe } from '@angular/common';
+import { DialogComponent } from './components/dialog/dialog.component'
 
+import {CountdownModule} from "ngx-countdown";
+import {NgxPaginationModule} from "ngx-pagination";
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,10 +39,12 @@ import { HomeComponent } from './components/home/home.component';
     DeleteBuchungComponent,
     LoginComponent,
     NavbarComponent,
-    NgTemplateLoadingErrorComponent,
-    HomeComponent
+    HomeComponent,
+    DialogComponent
   ],
   imports: [
+    NgxPaginationModule,
+    CountdownModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -58,7 +63,7 @@ import { HomeComponent } from './components/home/home.component';
     MatDialogModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [DatePipe, BnNgIdleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

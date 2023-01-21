@@ -1,0 +1,126 @@
+<html>
+<div class="general">
+
+  <div class="div-container">
+    <form appearance="fill" [formGroup]="form" (ngSubmit)="update_data_student(form)">
+
+      <div class="inputs_container">
+        <ng-container *ngIf="data_api$ | async as data; else loadingOrError">
+          <h1>Please enter the news information</h1>
+          <table>
+            <tr>
+              <td class="dt0">
+                Booking number
+              </td>
+              <td>
+                <input type="text" matInput formControlName="Bookingnumber" [(ngModel)]="this.data.Bookingnumber" readonly="true">
+              </td>
+            </tr>
+            <tr>
+              <td class="dt0">
+                Gender
+              </td>
+              <td>
+                <mat-form-field>
+                  <mat-select formControlName="Gender" [(ngModel)]="this.data.Gender">
+                    <mat-option value="Mr.">Mr.</mat-option>
+                    <mat-option value="Ms.">Ms.</mat-option>
+                    <mat-option value="Divers.">Divers.</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td class="dt0">
+                Firstname
+              </td>
+              <td>
+                <input matInput formControlName="Firstname" [(ngModel)]="this.data.Firstname">
+              </td>
+            </tr>
+            <tr>
+              <td class="dt0">
+                Lastname
+              </td>
+              <td>
+                <input matInput formControlName="Lastname" [(ngModel)]="this.data.Lastname">
+              </td>
+            </tr>
+            <tr>
+              <td class="dt0">
+                Email
+              </td>
+              <td>
+                <input type="email" matInput formControlName="Email" [(ngModel)]="this.data.Email">
+              </td>
+            </tr>
+            <tr>
+              <td class="dt0">
+                Phone number
+              </td>
+              <td>
+                <input type="number" matInput formControlName="Phonenummer" [(ngModel)]="this.data.Phonenummer">
+              </td>
+            </tr>
+            <tr>
+              <td class="dt0">
+                Arrival date
+              </td>
+              <td>
+                <input type="date" matInput formControlName="Startdate" [(ngModel)]="this.data.Startdate">
+              </td>
+            </tr>
+            <tr>
+              <td class="dt0">
+                Departure date
+              </td>
+              <td>
+                <input type="date" matInput formControlName="Enddate" [(ngModel)]="this.data.Enddate">
+              </td>
+            </tr>
+
+            <tr>
+              <td class="dt0">
+                Room number
+              </td>
+              <td>
+                <input matInput formControlName="Roomnumber" [(ngModel)]="this.data.Roomnumber" readonly="true">
+              </td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+              <td>
+                <p class="student-exist"> {{roomstatus}}</p>
+              </td>
+              <td>
+                <mat-error *ngIf="!form.valid">
+                </mat-error>
+              </td>
+            </tr>
+          </table>
+          <button mat-raised-button color="primary" [disabled]="!form.valid">Update data</button>
+        </ng-container>
+      </div>
+    </form>
+
+    <ng-template #loadingOrError>
+      <ng-container *ngIf="errorObject; else loading">
+        <div class="col-12 text-center">
+          <div class="alert alert-danger">
+            <p class="errormessage"> {{ errorObject }}</p>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #loading>
+        <div class="col-12 text-center">
+          <p class="loading">Loading ...</p>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>
+</html>
