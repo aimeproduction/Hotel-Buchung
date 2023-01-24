@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BnNgIdleService } from 'bn-ng-idle';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,11 +28,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { DatePipe } from '@angular/common';
 import { DialogComponent } from './components/dialog/dialog.component'
-
 import {CountdownModule} from "ngx-countdown";
 import {NgxPaginationModule} from "ngx-pagination";
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     ChatbotComponent
   ],
   imports: [
+    FormsModule,
     NgxPaginationModule,
     CountdownModule,
     BrowserModule,
@@ -65,7 +68,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     Ng2SearchPipeModule,
     MatDialogModule,
     MatTooltipModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [DatePipe, BnNgIdleService],
   bootstrap: [AppComponent]

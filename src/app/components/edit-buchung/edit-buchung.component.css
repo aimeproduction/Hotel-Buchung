@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 .errormessage{
   align-content: center;
   align-items: center;
@@ -26,7 +27,6 @@
 }
 body{
   height: 100%;
-  background: olive;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -40,7 +40,7 @@ form{
   width: 90%;
   padding: 40px;
   border-radius: 8px;
-  background: darkolivegreen;
+  background-image: url("src/assets/images/bg.jpg");
   box-shadow: 4px 4px 1px rgba(0,0,0,0.404);
   display: flex;
   flex-direction: column;

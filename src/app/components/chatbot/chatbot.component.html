@@ -6,3 +6,36 @@
 <head>
   <title></title>
 </head>
+<body>
+<div class="flex flex-column h-full mx-1 my-2">
+
+  <div class="p-3 md:px-4 lg:px-6 lg:py-4 mt-2 overflow-y-auto" style="max-height: 53vh;" #chatWindow [scrollTop]="chatWindow.scrollHeight">
+    <div *ngFor="let message of messages">
+      <div *ngIf="message.ownerId == 2" class="grid grid-nogutter mb-4">
+
+        <div class="col-mt-2">
+          <span class="text2">{{message.text}}</span>
+        </div>
+      </div>
+
+      <div *ngIf="message.ownerId === 1" class="grid grid-nogutter mb-4">
+        <div class="colmt-1">
+          <span class="text1">{{message.text}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fcf-form-group">
+    <label class="fcf-label">Your text</label>
+    <div class="fcf-input-group">
+      <input type="text" placeholder="Type a message" class="fcf-form-control" [(ngModel)]="textContent" (keydown.enter)="sendMessage()">
+    </div>
+  </div>
+
+    <div class="flex w-full sm:w-auto gap-3">
+      <button mat-raised-button color="primary" class="btnsend" (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</body>
+
+</html>

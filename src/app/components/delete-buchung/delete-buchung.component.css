@@ -1,9 +1,8 @@
 html {
-  margin: 0;
   font-family: Roboto,
   "Helvetica Neue",
   sans-serif;
-  background-color: green;
+  background-image: url("src/assets/images/bg.jpg");
   height: 100%;
 }
 

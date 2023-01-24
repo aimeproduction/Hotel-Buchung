@@ -4,7 +4,7 @@ html{
   height: 200%;
   background-image: url("src/assets/images/bg.jpg");
 }
-
+/*
 .errormessage{
   align-content: center;
   align-items: center;
@@ -98,5 +98,51 @@ tr{
 }
 tr:nth-child(even){
   background-color: #eeeeee;
+}*/
+
+
+html{
+  height: 200%;
+  background-image: url("src/assets/images/bg.jpg");
+}
+table td{
+  text-align: center;
+  vertical-align: middle;
+
 }
 
+.theinput{
+  margin-left: 40%;
+  width: 200px;
+}
+.content{
+  display: block;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 95%;
+  flex-direction: column;
+  align-items: center;
+}
+.errormessage{
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  color: red;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
+  margin-left: 10%;
+  margin-top: 10%;
+  line-height:1em;
+}
+.loading{
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
+  margin-left: 40%;
+  margin-top: 10%;
+}

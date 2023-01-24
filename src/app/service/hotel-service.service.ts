@@ -5,6 +5,8 @@ import {Customer} from "../models/customer";
 import {BnNgIdleService} from "bn-ng-idle";
 import {Router} from "@angular/router";
 
+import { Configuration, OpenAIApi } from 'openai';
+import { environments } from 'src/environments/environments';
 import {MatDialog} from "@angular/material/dialog";
 
 
@@ -12,6 +14,9 @@ import {MatDialog} from "@angular/material/dialog";
   providedIn: 'root'
 })
 export class HotelServiceService {
+  private readonly api: OpenAIApi;
+  private readonly configuration: Configuration;
+  apiKey: string = environments.apikeyChatGpt3;
   firstUser = 'angular1'
   firstPassword = 'project1'
   secondUser = 'angular2'
@@ -22,9 +27,24 @@ export class HotelServiceService {
   BaseUrl = 'http://localhost:3000/posts';
   timer =1800;
   constructor(public dialog: MatDialog,private route: Router, private  http: HttpClient, private bnIdle: BnNgIdleService) {
-
+    this.configuration = new Configuration({
+      apiKey: this.apiKey
+    });
+    this.api = new OpenAIApi(this.configuration);
   }
-
+  async getAnwser(text: string) {
+    let answer = await this.api.createCompletion({
+      model: 'text-davinci-003',
+      prompt: text,
+      temperature: 0.9,
+      max_tokens: 150,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0.6,
+      stop: [" Human:", " AI:"],
+    });
+    return answer.data.choices[0].text;
+  }
 LogOut(){
   this.bnIdle.startWatching(1801).subscribe((res) => {
     if (res) {

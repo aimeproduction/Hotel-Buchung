@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {catchError, Observable, throwError} from "rxjs";
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {Customer} from "../../models/customer";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -7,25 +6,28 @@ import {MatDialog} from "@angular/material/dialog";
 import {HotelServiceService} from "../../service/hotel-service.service";
 import {DeleteBuchungComponent} from "../delete-buchung/delete-buchung.component";
 import {EditBuchungComponent} from "../edit-buchung/edit-buchung.component";
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatSort} from "@angular/material/sort";
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-list-buchung',
   templateUrl: './list-buchung.component.html',
   styleUrls: ['./list-buchung.component.css']
 })
-export class ListBuchungComponent {
-  title='pagination'
-  page: number=1;
-  count: number=0;
-  tablesize: number =10;
-  tablsizes: number[]=[5,10,15,20]
+export class ListBuchungComponent{
+  displayedColumns: string[] = ["Bookingnumber","Gender",
+  "Firstname",
+  "Lastname","Email","Phonenummer","Roomnumber","Startdate","Enddate", "Administration"];
+
   index: number =0;
   customer_id: number = 0;
-  data$!: Observable<Customer[]>;
+  data!: Customer[];
   search!: string;
   public form_search!: FormGroup;
   errorObject = '';
-
+  dataSource!: MatTableDataSource<Customer>;
   constructor(private _snackBar: MatSnackBar,
               public dialog: MatDialog, private service: HotelServiceService, private fb: FormBuilder) {
 
@@ -38,6 +40,8 @@ export class ListBuchungComponent {
     });
   }
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   delete_student( id: number, index: number) {
     this.index = index;
@@ -61,12 +65,15 @@ export class ListBuchungComponent {
   }
 
   refresh() {
-    this.errorObject = '';
-    this.data$ = this.service.getAllData().pipe(
-      catchError(err => {
-        this.errorObject = 'Sorry, it was not possible to load the data.';
-        return throwError(err);
-      })
-    );
+    this.service.getAllData().subscribe({
+    next:(res)=>{
+      this.data = res;
+      this.dataSource = new MatTableDataSource<Customer>(this.data)
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort
+      this.errorObject = '';
+    }
+    })
+    this.errorObject = 'Sorry, it was not possible to load the data. Please try again later.';
   }
 }
