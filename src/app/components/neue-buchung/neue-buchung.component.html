@@ -93,20 +93,23 @@
                   <div class="fcf-form-group">
                     <label for="Startdate" class="fcf-label">Arrival date</label>
                     <div class="fcf-input-group">
-                      <input type="date" id="Startdate" formControlName="Startdate" name="Startdate" class="fcf-form-control" required>
+                      <input type="date" id="Startdate" formControlName="Startdate" name="Startdate" class="fcf-form-control" >
                     </div>
                   </div>
                   <div class="fcf-form-group">
                   <label for="Enddate" class="fcf-label">Departure date</label>
                   <div class="fcf-input-group">
-                    <input type="date" id="Enddate" formControlName="Enddate" name="Enddate" class="fcf-form-control" required>
+                    <input type="date" id="Enddate" formControlName="Enddate"  name="Enddate" class="fcf-form-control" >
                   </div>
               </div>
 
                   <br><br>
                   <div class="fcf-form-group">
-                    <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block" [disabled]="!form.valid" (click)="onSubmit()">Booking of the
+                    <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block" (click)="onSubmit()">Booking of the
                       room</button>
+                  </div>
+                  <div class="errorform">
+                    <p class="errordateMessage"> {{errorform}}</p>
                   </div>
                 </form>
               </div>

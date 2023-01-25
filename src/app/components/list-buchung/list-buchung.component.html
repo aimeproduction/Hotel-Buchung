@@ -5,18 +5,12 @@
   <title></title>
 </head>
 <body>
-<div>
 
-  <div class="child1">
-    <br><br><br><br>
+<div class="content" role="main">
     <form class="ui container form" appearance="fill" [formGroup]="form_search">
       <input class="theinput" type="search" formControlName="search" style="height: 30px;" [(ngModel)]="search">
     </form>
-  </div>
-</div>
 <br>
-<br>
-<div class="content" role="main">
   <ng-container *ngIf="dataSource; else loadingOrError">
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="data | filter: search" matSort>

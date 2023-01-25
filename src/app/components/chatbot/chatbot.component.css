@@ -36,7 +36,7 @@ html{
 }
 
 .fcf-form-control {
-  margin-left: 15%;
+  margin-left: 18%;
   display: block;
   width: 50%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -59,7 +59,7 @@ html{
 label.fcf-label {
   display: inline-block;
   margin-bottom: 0.5rem;
-  margin-left: 15%;
+  margin-left: 18%;
   margin-top: 18%;
   font-size: 25px;
   color: white;
@@ -67,5 +67,5 @@ label.fcf-label {
 }
 .btnsend{
   margin-top: -8.5%;
-margin-left:70%;
+margin-left:72%;
 }
