@@ -3,6 +3,7 @@ html {
   "Helvetica Neue",
   sans-serif;
   background-image: url("src/assets/images/bg.jpg");
+  background-size: 500%;
   height: 100%;
 }
 

@@ -27,7 +27,6 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
-
 # Miscellaneous
 /.angular/cache
 .sass-cache/
@@ -36,7 +35,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-/src/environments/environments.ts
+
 # System files
 .DS_Store
 Thumbs.db

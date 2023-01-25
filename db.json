@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "Bookingnumber": "Bo11",
+      "Bookingnumber": "Bo10",
       "Gender": "Mr.",
       "Roomnumber": 1,
       "Firstname": "Mike",
@@ -14,108 +14,90 @@
     },
     {
       "Bookingnumber": "Bo11",
-      "Gender": "Mr.",
-      "Roomnumber": 1,
-      "Firstname": "Mike",
+      "Gender": "Ms.",
+      "Roomnumber": 2,
+      "Firstname": "Nangue",
       "Lastname": "Mike",
-      "Email": "fdgdffdsfd",
-      "Phonenummer": 435435433,
-      "Startdate": "2023-02-01",
-      "Enddate": "2023-02-02",
-      "id": 2
-    },
-    {
-      "Bookingnumber": "Bo11",
-      "Gender": "Mr.",
-      "Roomnumber": 1,
-      "Firstname": "Mike",
-      "Lastname": "Mike",
-      "Email": "fdgdffdsfd",
-      "Phonenummer": 435435433,
-      "Startdate": "2023-02-01",
-      "Enddate": "2023-02-02",
-      "id": 2
-    },
-    {
-      "Bookingnumber": "Bo11",
-      "Gender": "Mr.",
-      "Roomnumber": 1,
-      "Firstname": "Mike",
-      "Lastname": "Mike",
-      "Email": "fdgdffdsfd",
-      "Phonenummer": 435435433,
-      "Startdate": "2023-02-01",
-      "Enddate": "2023-02-02",
-      "id": 2
-    },
-    {
-      "Bookingnumber": "Bo11",
-      "Gender": "Mr.",
-      "Roomnumber": 1,
-      "Firstname": "Mike",
-      "Lastname": "Mike",
-      "Email": "fdgdffdsfd",
-      "Phonenummer": 435435433,
-      "Startdate": "2023-02-01",
-      "Enddate": "2023-02-02",
-      "id": 2
-    },
-    {
-      "Bookingnumber": "Bo11",
-      "Gender": "Mr.",
-      "Roomnumber": 1,
-      "Firstname": "Mike",
-      "Lastname": "Mike",
-      "Email": "fdgdffdsfd",
-      "Phonenummer": 435435433,
-      "Startdate": "2023-02-01",
-      "Enddate": "2023-02-02",
-      "id": 2
-    },
-    {
-      "Bookingnumber": "Bo11",
-      "Gender": "Mr.",
-      "Roomnumber": 1,
-      "Firstname": "Mike",
-      "Lastname": "Mike",
-      "Email": "fdgdffdsfd",
-      "Phonenummer": 435435433,
-      "Startdate": "2023-02-01",
-      "Enddate": "2023-02-02",
-      "id": 2
-    },
-    {
-      "Bookingnumber": "Bo11",
-      "Gender": "Mr.",
-      "Roomnumber": 1,
-      "Firstname": "Mike",
-      "Lastname": "Mike",
-      "Email": "fdgdffdsfd",
-      "Phonenummer": 435435433,
-      "Startdate": "2023-02-01",
-      "Enddate": "2023-02-02",
+      "Email": "mymail",
+      "Phonenummer": 125433,
+      "Startdate": "2023-03-01",
+      "Enddate": "2023-03-02",
       "id": 2
     },
     {
       "Bookingnumber": "Bo12",
       "Gender": "Mr.",
-      "Roomnumber": 2,
-      "Firstname": "hjkhjkh",
-      "Lastname": "jkhklhkjh",
-      "Email": "kjhjkjhjkh",
-      "Phonenummer": 768756,
+      "Roomnumber": 4,
+      "Firstname": "Jonas",
+      "Lastname": "Zimmermann",
+      "Email": "comming",
+      "Phonenummer": 985435433,
+      "Startdate": "2023-04-10",
+      "Enddate": "2023-04-15",
+      "id": 2
+    },
+    {
+      "Bookingnumber": "Bo13",
+      "Gender": "Mr.",
+      "Roomnumber": 3,
+      "Firstname": "Ferdinand",
+      "Lastname": "Müller",
+      "Email": "okay",
+      "Phonenummer": 7635433,
+      "Startdate": "2023-08-01",
+      "Enddate": "2023-08-12",
+      "id": 2
+    },
+    {
+      "Bookingnumber": "Bo14",
+      "Gender": "Ms.",
+      "Roomnumber": 5,
+      "Firstname": "Julia",
+      "Lastname": "Merkel",
+      "Email": "test",
+      "Phonenummer": 67835433,
       "Startdate": "2023-02-01",
       "Enddate": "2023-02-02",
-      "id": 3
-    }
-  ],
-  "comments": [
+      "id": 2
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "Bookingnumber": "Bo11",
+      "Gender": "Mr.",
+      "Roomnumber": 1,
+      "Firstname": "Mike",
+      "Lastname": "Mike",
+      "Email": "fdgdffdsfd",
+      "Phonenummer": 435435433,
+      "Startdate": "2023-02-01",
+      "Enddate": "2023-02-02",
+      "id": 2
+    },
+    {
+      "Bookingnumber": "Bo11",
+      "Gender": "Mr.",
+      "Roomnumber": 1,
+      "Firstname": "Mike",
+      "Lastname": "Mike",
+      "Email": "fdgdffdsfd",
+      "Phonenummer": 435435433,
+      "Startdate": "2023-02-01",
+      "Enddate": "2023-02-02",
+      "id": 2
+    },
+    {
+      "Bookingnumber": "Bo11",
+      "Gender": "Mr.",
+      "Roomnumber": 1,
+      "Firstname": "Mike",
+      "Lastname": "Mike",
+      "Email": "fdgdffdsfd",
+      "Phonenummer": 435435433,
+      "Startdate": "2023-02-01",
+      "Enddate": "2023-02-02",
+      "id": 2
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

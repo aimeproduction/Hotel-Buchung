@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="095abcf1-b77d-40e7-8c11-a24be4aa16e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/models/message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/environments/environments.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/delete-buchung/delete-buchung.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/delete-buchung/delete-buchung.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/edit-buchung/edit-buchung.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/edit-buchung/edit-buchung.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/hotel-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/hotel-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +75,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tabueu-kamga\Documents\repositories\Hotel-Buchung\src\assets\images" />
       <recent name="C:\Users\mnang\WebstormProjects\Hotel-Buchung\hotel-buchung-angular\src\assets" />
     </key>
   </component>
@@ -128,6 +119,7 @@
       <workItem from="1674557958367" duration="25282000" />
       <workItem from="1674587732978" duration="3110000" />
       <workItem from="1674597783094" duration="482000" />
+      <workItem from="1674651955065" duration="891000" />
     </task>
     <servers />
   </component>

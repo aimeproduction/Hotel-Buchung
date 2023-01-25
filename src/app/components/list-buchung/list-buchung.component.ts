@@ -46,6 +46,7 @@ export class ListBuchungComponent{
   delete_student( id: number, index: number) {
     this.index = index;
     this.customer_id = id;
+    console.log('id'+ this.index)
     this.dialog.open(DeleteBuchungComponent, {
       width: '500px', height: '500px',
       data: {customer_id: this.customer_id, index: this.index}
