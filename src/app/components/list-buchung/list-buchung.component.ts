@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Customer} from "../../models/customer";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -6,10 +6,9 @@ import {MatDialog} from "@angular/material/dialog";
 import {HotelServiceService} from "../../service/hotel-service.service";
 import {DeleteBuchungComponent} from "../delete-buchung/delete-buchung.component";
 import {EditBuchungComponent} from "../edit-buchung/edit-buchung.component";
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-list-buchung',
@@ -17,22 +16,25 @@ import { throwError } from 'rxjs';
   styleUrls: ['./list-buchung.component.css']
 })
 export class ListBuchungComponent{
-  displayedColumns: string[] = ["Bookingnumber","Gender",
-  "Firstname",
-  "Lastname","Email","Phonenummer","Roomnumber","Startdate","Enddate", "Administration"];
-
+  title='pagination'
   index: number =0;
   customer_id: number = 0;
   data!: Customer[];
   search!: string;
   public form_search!: FormGroup;
   errorObject = '';
+  displayedColumns: string[] = ["Bookingnumber","Gender", "Firstname",
+    "Lastname","Email","Phonenummer","Roomnumber","Startdate","Enddate", "Administration"];
+  forThePagination=true;
+  Dataavailable =false
+
   dataSource!: MatTableDataSource<Customer>;
   constructor(private _snackBar: MatSnackBar,
               public dialog: MatDialog, private service: HotelServiceService, private fb: FormBuilder) {
-
   }
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   ngOnInit(): void {
     this.refresh();
     this.form_search = this.fb.group({
@@ -40,13 +42,10 @@ export class ListBuchungComponent{
     });
   }
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
 
   delete_Booking( id: number, index: number) {
     this.index = index;
     this.customer_id = id;
-    console.log('id'+ this.index)
     this.dialog.open(DeleteBuchungComponent, {
       width: '500px', height: '500px',
       data: {customer_id: this.customer_id, index: this.index}
@@ -65,19 +64,25 @@ export class ListBuchungComponent{
     });
   }
 
+
   refresh() {
+    this.errorObject = '';
     this.service.getAllData().subscribe({
-    next:(res)=>{
-      this.data = res;
-      this.dataSource = new MatTableDataSource<Customer>(this.data)
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort
-      this.errorObject = '';
-    },
-      error(){
-        alert("Sorry, it was not possible to load the data. Please try again later.");
+      next:(res)=>{
+        this.data = res;
+        this.dataSource = new MatTableDataSource<Customer>(this.data)
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort
+        this.errorObject = '';
+        if(this.data.length ==0){
+          this.forThePagination = false;
+          this.Dataavailable =true;
+        }
+      },
+      error:()=>{
+        this.errorObject = 'Sorry, it was not possible to load the data.';
       }
-    })
+    });
 
   }
 }

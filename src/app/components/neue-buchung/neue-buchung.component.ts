@@ -26,7 +26,7 @@ export class NeueBuchungComponent {
   bookingnumber = '';
   todayDate = new Date();
   latest_date!: any;
-
+  errormail =''
 
   constructor(public datepipe: DatePipe, private route: Router, private fb: FormBuilder,
               private service: HotelServiceService, private _snackBar: MatSnackBar) {
@@ -168,14 +168,9 @@ export class NeueBuchungComponent {
   }
 
 
-  DataToLocalstorage() {
+ DataToLocalstorage() {
     this.reservedrooms.push(JSON.parse(this.form.value.Roomnumber))
     localStorage.setItem("reservedrooms", JSON.stringify(this.reservedrooms))
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
   }
 
 
@@ -193,6 +188,11 @@ export class NeueBuchungComponent {
       complete: () => {
         this.form.reset();
         this.showHide = false;
+        window.scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
       }
     })
   }
@@ -201,6 +201,7 @@ export class NeueBuchungComponent {
   CheckFormValidity(form: FormGroup) {
     if (!form.value.Roomnumber) {
       this.errorform = 'Please choose a room number';
+      console.log(this.errorform)
     } else if (!form.value.Gender) {
       this.errorform = 'Please choose a gender'
     } else if (!form.value.Firstname) {
@@ -224,9 +225,9 @@ export class NeueBuchungComponent {
 
     const hasChar = myList.some((charac) => myString.includes(charac));
     if (hasChar) {
-      this.errorform = 'Your email contains invalid character(s).'
+      this.errormail = 'Your email contains invalid character(s).'
     } else {
-      this.errorform = ''
+      this.errormail = ''
     }
 
   }

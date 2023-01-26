@@ -33,13 +33,17 @@ table td{
   line-height:1em;
 }
 .loading{
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
+  text-align: center;
   color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 50px;
-  margin-left: 40%;
+  margin-top: 10%;
+}
+
+.No-Data{
+  text-align: center;
+  color: yellow;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
   margin-top: 10%;
 }

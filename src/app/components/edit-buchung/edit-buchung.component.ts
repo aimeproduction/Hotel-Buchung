@@ -66,28 +66,29 @@ export class EditBuchungComponent {
 
 
   update_Data_Booking(form: FormGroup) {
-
     if (form.value.Startdate > form.value.Enddate) {
-
       this.errorDate = 'The start date is further away than the end date. Please change the dates';
-    } else {
+    }
+    else {
       this.service.getAllData().subscribe(data => {
         this.datas = data;
         for (let i = 0; i < data.length; i++) {
-          if (form.value.Roomnumber == data[i].Roomnumber && form.value.Bookingnumber == data[i].Bookingnumber) {
+          if (form.value.Bookingnumber == data[i].Bookingnumber && form.value.Roomnumber == data[i].Roomnumber
+             && form.value.Startdate == data[i].Startdate && form.value.Enddate == data[i].Enddate) {
             this.saveData = true;
-            this.roomstatus = '';
+            this.errorDate =''
             break;
-          } else if (form.value.Roomnumber == data[i].Roomnumber) {
-            if ((form.value.Startdate >= data[i].Startdate && form.value.Startdate >= data[i].Enddate &&
-                form.value.Enddate >= data[i].Startdate && form.value.Enddate >= data[i].Enddate) ||
-              (form.value.Startdate <= data[i].Startdate && form.value.Startdate <= data[i].Enddate &&
-                form.value.Enddate <= data[i].Startdate && form.value.Enddate <= data[i].Enddate)) {
-              this.roomstatus = '';
+          }
+          else if (form.value.Bookingnumber != data[i].Bookingnumber && form.value.Roomnumber == data[i].Roomnumber) {
+            if ((form.value.Startdate > data[i].Enddate || form.value.Enddate < data[i].Startdate)||
+              (form.value.Startdate < data[i].Startdate && form.value.Enddate < data[i].Startdate) ||
+              (form.value.Startdate > data[i].Startdate && data[i].Enddate < form.value.Startdate)) {
+              this.errorDate = '';
               this.saveData = true;
-            } else {
+            }
+            else {
               this.saveData = false;
-              this.roomstatus = 'Sorry, this room is not free for this period. Please choose another period.'
+              this.errorDate = 'Sorry, this room is not free for this period. Please choose another period.'
               break;
             }
           }
