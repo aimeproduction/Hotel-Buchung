@@ -65,7 +65,7 @@ export class EditBuchungComponent {
   }
 
 
-  update_data_student(form: FormGroup) {
+  update_Data_Booking(form: FormGroup) {
 
     if (form.value.Startdate > form.value.Enddate) {
 

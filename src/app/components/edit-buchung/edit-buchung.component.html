@@ -2,7 +2,7 @@
 <div class="general">
 
   <div class="div-container">
-    <form appearance="fill" [formGroup]="form" (ngSubmit)="update_data_student(form)">
+    <form appearance="fill" [formGroup]="form" (ngSubmit)="update_Data_Booking(form)">
 
       <div class="inputs_container">
         <ng-container *ngIf="data_api$ | async as data; else loadingOrError">

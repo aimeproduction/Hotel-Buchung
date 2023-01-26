@@ -43,7 +43,7 @@ export class ListBuchungComponent{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  delete_student( id: number, index: number) {
+  delete_Booking( id: number, index: number) {
     this.index = index;
     this.customer_id = id;
     console.log('id'+ this.index)
@@ -55,7 +55,7 @@ export class ListBuchungComponent{
     });
   }
 
-  update_student(index: number) {
+  update_Booking(index: number) {
     this.customer_id = index;
     this.dialog.open(EditBuchungComponent, {
       width: '700px', height: '650px',
@@ -73,8 +73,11 @@ export class ListBuchungComponent{
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort
       this.errorObject = '';
-    }
+    },
+      error(){
+        alert("Sorry, it was not possible to load the data. Please try again later.");
+      }
     })
-    this.errorObject = 'Sorry, it was not possible to load the data. Please try again later.';
+
   }
 }

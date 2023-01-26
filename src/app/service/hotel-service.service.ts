@@ -54,7 +54,6 @@ LogOut(){
 }
   getAllData(): Observable<Customer[]>{
     return this.http.get<Customer[]>("http://localhost:3000/posts").pipe(tap(res =>{
-      console.log(res)
       }
 
     ));

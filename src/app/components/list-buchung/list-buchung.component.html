@@ -75,11 +75,11 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header="Action"> Administration </th>
           <td mat-cell *matCellDef="let element let i = index;">
             <button mat-icon-button matTooltip="bearbeiten" color="primary" aria-label="bearbeiten"
-                    (click)="update_student(element.id)">
+                    (click)="update_Booking(element.id)">
               <mat-icon>mode_edit_outline</mat-icon>
             </button>
             <button mat-icon-button matTooltip="löschen" color="warn" aria-label="löschen"
-                    (click)="delete_student(element.id, i)">
+                    (click)="delete_Booking(element.id, i)">
               <mat-icon>delete</mat-icon>
             </button>
           </td>

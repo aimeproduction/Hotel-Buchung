@@ -48,7 +48,7 @@ export class DeleteBuchungComponent {
     this.dialogRef.close();
   }
 
-  delete_student() {
+  delete_Booking() {
     this.service.delete_customer_data(this.customer_id).subscribe({
       next: () => {
         this._snackBar.open('The booking has been successfully deleted!', 'Okay', {
