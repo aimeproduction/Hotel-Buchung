@@ -11,7 +11,7 @@ import { DeleteBuchungComponent } from './components/delete-buchung/delete-buchu
 import {ReactiveFormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from "@angular/material/input";
-import {MatOptionModule} from "@angular/material/core";
+import {MAT_DATE_LOCALE, MatNativeDateModule, MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
@@ -34,6 +34,8 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,32 +49,35 @@ import {MatSortModule} from "@angular/material/sort";
     DialogComponent,
     ChatbotComponent
   ],
-  imports: [
-    FormsModule,
-    NgxPaginationModule,
-    CountdownModule,
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatDividerModule,
-    HttpClientModule,
-    MatSnackBarModule,
-    Ng2SearchPipeModule,
-    MatDialogModule,
-    MatTooltipModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatSortModule
-  ],
-  providers: [DatePipe, BnNgIdleService],
+    imports: [
+        FormsModule,
+      MatFormFieldModule,
+      MatNativeDateModule,
+        NgxPaginationModule,
+        CountdownModule,
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatOptionModule,
+        MatSelectModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatButtonModule,
+        MatDividerModule,
+        HttpClientModule,
+        MatSnackBarModule,
+        Ng2SearchPipeModule,
+        MatDialogModule,
+        MatTooltipModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatSortModule,
+        MatDatepickerModule
+    ],
+  providers: [DatePipe, BnNgIdleService, { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

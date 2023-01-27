@@ -14,17 +14,25 @@
   <div class="content">
     <form [formGroup]="form" (ngSubmit)="Roomsearch(form)">
       <div class="user-details">
-        <div class="input-box">
-          <span class="details">Arrival date</span>
-          <input type="date" formControlName="Startdate" placeholder="Your arrival date" required>
+        <div class="divdate">
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="Startdate" (dateChange)="toogle($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
         </div>
-        <div class="input-box">
-          <span class="details">Departure date</span>
-          <input type="date" formControlName="Enddate" placeholder="Your departure date" required>
+        <div class="divdate1">
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput  [matDatepicker]="picker1" formControlName="Enddate" (dateChange)="toogle($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
         </div>
         <div class="button">
           <br>
-          <input type="submit" value="Search for available rooms">
+          <input type="submit" value="Search for available rooms" (click)="saveDate(form)">
         </div>
         <div class="errorform">
           <p class="errordateMessage"> {{errorform}}</p>
@@ -36,93 +44,93 @@
       <div *ngIf="showHide">
         <div *ngIf="freerooms">
 
-            <div class="fcf-body">
+          <div class="fcf-body">
 
-              <div id="fcf-form">
-                <h3 class="fcf-h3">Customer infos</h3>
+            <div id="fcf-form">
+              <h3 class="fcf-h3">Customer infos</h3>
 
-                <form id="fcf-form-id" class="fcf-form-class" [formGroup]="form">
-                  <br><br>
+              <form id="fcf-form-id" class="fcf-form-class" [formGroup]="form">
+                <br><br>
 
-                  <table>
-                    <tr>
-                      <td>
-                  <mat-form-field appearance="fill">
-                    <mat-select formControlName="Roomnumber" placeholder="Free rooms">
-                      <mat-option *ngFor="let Freeroom of freerooms" value="{{Freeroom}}">{{Freeroom}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                      </td>
-                      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                      <td>
-                  <mat-form-field appearance="fill">
-                    <mat-select formControlName="Gender" placeholder="Gender">
-                      <mat-option [value]="'Mr.'">Mr.</mat-option>
-                      <mat-option [value]="'Ms.'">Ms.</mat-option>
-                      <mat-option [value]="'Divers.'">Divers.</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                      </td>
-                    </tr>
-                  </table>
-                  <div class="fcf-form-group">
-                    <label for="Firstname" class="fcf-label">Firstname</label>
-                    <div class="fcf-input-group">
-                      <input type="text" id="Firstname" formControlName="Firstname" name="Name" class="fcf-form-control" required>
-                    </div>
+                <table>
+                  <tr>
+                    <td>
+                      <mat-form-field appearance="fill">
+                        <mat-select formControlName="Roomnumber" placeholder="Free rooms">
+                          <mat-option *ngFor="let Freeroom of freerooms" value="{{Freeroom}}">{{Freeroom}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td>
+                      <mat-form-field appearance="fill">
+                        <mat-select formControlName="Gender" placeholder="Gender">
+                          <mat-option [value]="'Mr.'">Mr.</mat-option>
+                          <mat-option [value]="'Ms.'">Ms.</mat-option>
+                          <mat-option [value]="'Divers.'">Divers.</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                </table>
+                <div class="fcf-form-group">
+                  <label for="Firstname" class="fcf-label">Firstname</label>
+                  <div class="fcf-input-group">
+                    <input type="text" id="Firstname" formControlName="Firstname" name="Name" class="fcf-form-control" required>
                   </div>
-                  <div class="fcf-form-group">
-                    <label for="Lastname" class="fcf-label">Lastname</label>
-                    <div class="fcf-input-group">
-                      <input type="text" id="Lastname" formControlName="Lastname" name="Name" class="fcf-form-control" required>
-                    </div>
+                </div>
+                <div class="fcf-form-group">
+                  <label for="Lastname" class="fcf-label">Lastname</label>
+                  <div class="fcf-input-group">
+                    <input type="text" id="Lastname" formControlName="Lastname" name="Name" class="fcf-form-control" required>
                   </div>
-                  <div class="fcf-form-group">
-                    <label for="Phonenummer" class="fcf-label">Phone number</label>
-                    <div class="fcf-input-group">
-                      <input type="number" id="Phonenummer" formControlName="Phonenummer" name="Name" class="fcf-form-control" required>
-                    </div>
+                </div>
+                <div class="fcf-form-group">
+                  <label for="Phonenummer" class="fcf-label">Phone number</label>
+                  <div class="fcf-input-group">
+                    <input type="number" id="Phonenummer" formControlName="Phonenummer" name="Name" class="fcf-form-control" required>
                   </div>
+                </div>
 
-                  <div class="fcf-form-group">
-                    <label for="Email" class="fcf-label">Email address</label>
-                    <div class="fcf-input-group">
-                      <input type="email" id="Email" formControlName="Email" name="Email" class="fcf-form-control" required>
-                    </div>
+                <div class="fcf-form-group">
+                  <label for="Email" class="fcf-label">Email address</label>
+                  <div class="fcf-input-group">
+                    <input type="email" id="Email" formControlName="Email" name="Email" class="fcf-form-control" required>
                   </div>
-                  <div class="fcf-form-group">
-                    <label for="Startdate" class="fcf-label">Arrival date</label>
-                    <div class="fcf-input-group">
-                      <input type="date" id="Startdate" formControlName="Startdate" name="Startdate" class="fcf-form-control" >
-                    </div>
+                </div>
+                <div class="fcf-form-group">
+                  <label for="Startdate" class="fcf-label">Arrival date</label>
+                  <div class="fcf-input-group">
+                    <input type="text" id="Startdate" class="fcf-form-control" value="{{startD | date: 'dd/MM/yyyy'}}" readonly>
                   </div>
-                  <div class="fcf-form-group">
+                </div>
+                <div class="fcf-form-group">
                   <label for="Enddate" class="fcf-label">Departure date</label>
                   <div class="fcf-input-group">
-                    <input type="date" id="Enddate" formControlName="Enddate"  name="Enddate" class="fcf-form-control" >
+                    <input type="text" id="Enddate"   value="{{endD | date: 'dd/MM/yyyy'}}" class="fcf-form-control" readonly>
                   </div>
-              </div>
+                </div>
 
-                  <br><br>
-                  <div class="fcf-form-group">
-                    <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block" (click)="onSubmit()">Booking of the
-                      room</button>
-                  </div>
-                  <div class="errorform">
-                    <p class="errordateMessage"> {{errorform}}</p>
-                    <p class="errordateMessage"> {{errormail}}</p>
-                  </div>
-                </form>
-              </div>
+                <br><br>
+                <div class="fcf-form-group">
+                  <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block" (click)="onSubmit()">Booking of the
+                    room</button>
+                </div>
+                <div class="errorform">
+                  <p class="errordateMessage"> {{errorform}}</p>
+                  <p class="errordateMessage"> {{errormail}}</p>
+                </div>
+              </form>
             </div>
-
-
           </div>
+
+
         </div>
-    </form>
       </div>
+    </form>
   </div>
+</div>
 
 </body>
 </html>

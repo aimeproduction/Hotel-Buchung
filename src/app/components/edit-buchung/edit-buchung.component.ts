@@ -7,6 +7,7 @@ import {Customer} from "../../models/customer";
 import {DialogData} from "../../Models/dialogData";
 import {Observable, throwError} from "rxjs";
 import {catchError, tap} from "rxjs/operators";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-edit-buchung',
@@ -23,8 +24,11 @@ export class EditBuchungComponent {
   customer_id: number = 0;
   errorDate!: string;
   roomstatus = '';
+  errorform=''
+  todayDate = new Date();
+  latest_date!: any;
 
-  constructor(public dialogRef: MatDialogRef<EditBuchungComponent>,
+  constructor(public dialogRef: MatDialogRef<EditBuchungComponent>, public datepipe: DatePipe,
               // tslint:disable-next-line:max-line-length
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
               public service: HotelServiceService,
@@ -66,10 +70,9 @@ export class EditBuchungComponent {
 
 
   update_Data_Booking(form: FormGroup) {
-    if (form.value.Startdate > form.value.Enddate) {
-      this.errorDate = 'The start date is further away than the end date. Please change the dates';
-    }
-    else {
+    this.CheckDateValidity(form);
+    if (!this.errorform && !this.errorDate) {
+
       this.service.getAllData().subscribe(data => {
         this.datas = data;
         for (let i = 0; i < data.length; i++) {
@@ -80,9 +83,9 @@ export class EditBuchungComponent {
             break;
           }
           else if (form.value.Bookingnumber != data[i].Bookingnumber && form.value.Roomnumber == data[i].Roomnumber) {
-            if ((form.value.Startdate > data[i].Enddate || form.value.Enddate < data[i].Startdate)||
-              (form.value.Startdate < data[i].Startdate && form.value.Enddate < data[i].Startdate) ||
-              (form.value.Startdate > data[i].Startdate && data[i].Enddate < form.value.Startdate)) {
+            if ((form.value.Startdate >= data[i].Enddate || form.value.Enddate <= data[i].Startdate)||
+              (form.value.Startdate < data[i].Startdate && form.value.Enddate <= data[i].Startdate) ||
+              (form.value.Startdate >= data[i].Startdate && data[i].Enddate <= form.value.Startdate)) {
               this.errorDate = '';
               this.saveData = true;
             }
@@ -93,28 +96,46 @@ export class EditBuchungComponent {
             }
           }
         }
-
-
         if (this.saveData) {
 
-          this.service.update_customer_data(this.form.value, this.customer_id).subscribe({
-            next: () => {
-              this._snackBar.open('The data has been successfully modified!', 'Okay', {
-                duration: 5000,
-                verticalPosition: 'top'
-              })
-            },
-            error: () => {
-              alert("Error, failure of the operation")
-            },
-            complete: () => {
-              this.dialogRef.close();
-            }
-          })
+          this.SendDataToUpdate()
         }
-
       });
     }
 
+  }
+
+  SendDataToUpdate(){
+    this.service.update_customer_data(this.form.value, this.customer_id).subscribe({
+      next: () => {
+        this._snackBar.open('The data has been successfully modified!', 'Okay', {
+          duration: 5000,
+          verticalPosition: 'top'
+        })
+      },
+      error: () => {
+        alert("Error, failure of the operation")
+      },
+      complete: () => {
+        this.dialogRef.close();
+      }
+    })
+  }
+  DateFunction(form: FormGroup) {
+    this.latest_date = this.datepipe.transform(this.todayDate, 'yyyy-MM-dd');
+  }
+  CheckDateValidity(form: FormGroup) {
+    this.DateFunction(form);
+    if (!form.value.Startdate || !form.value.Enddate) {
+      this.errorform = 'Please enter a period';
+    } else if (form.value.Startdate < this.latest_date) {
+      this.errorform = 'It is not possible to make reservations for past dates'
+    } else if (form.value.Startdate == form.value.Enddate) {
+      this.errorform = 'Sorry, you have to stay at least one night'
+    } else if (form.value.Startdate > form.value.Enddate) {
+      this.errorform = 'The start date is further away than the end date. Please change the dates'
+    } else {
+      this.errorform = '';
+    }
   }
 }

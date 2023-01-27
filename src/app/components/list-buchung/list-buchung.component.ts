@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnChanges, OnInit, ViewChild} from '@angular/core';
 import {Customer} from "../../models/customer";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -15,7 +15,7 @@ import {MatSort} from "@angular/material/sort";
   templateUrl: './list-buchung.component.html',
   styleUrls: ['./list-buchung.component.css']
 })
-export class ListBuchungComponent{
+export class ListBuchungComponent implements OnInit{
   title='pagination'
   index: number =0;
   customer_id: number = 0;
@@ -35,11 +35,14 @@ export class ListBuchungComponent{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+
   ngOnInit(): void {
     this.refresh();
     this.form_search = this.fb.group({
       search: [''],
     });
+    console.log('hall')
   }
 
 
@@ -85,4 +88,5 @@ export class ListBuchungComponent{
     });
 
   }
+
 }

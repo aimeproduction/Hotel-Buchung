@@ -13,7 +13,7 @@ import {Customer} from "../../models/customer";
   styleUrls: ['./neue-buchung.component.css']
 })
 export class NeueBuchungComponent {
-  showHide = false;
+  showHide = true;
   booking_first_part = 'Bo'
   booking_last_part = 1;
   public form!: FormGroup;
@@ -27,6 +27,8 @@ export class NeueBuchungComponent {
   todayDate = new Date();
   latest_date!: any;
   errormail =''
+  startD: any;
+  endD: any;
 
   constructor(public datepipe: DatePipe, private route: Router, private fb: FormBuilder,
               private service: HotelServiceService, private _snackBar: MatSnackBar) {
@@ -67,13 +69,15 @@ export class NeueBuchungComponent {
   }
 
 
-  DateFunction() {
+  DateFunction(form: FormGroup) {
     this.latest_date = this.datepipe.transform(this.todayDate, 'yyyy-MM-dd');
+    form.value.Startdate = this.datepipe.transform(form.value.Startdate, 'yyyy-MM-dd')
+    form.value.Enddate = this.datepipe.transform(form.value.Enddate, 'yyyy-MM-dd')
   }
 
 
   Roomsearch(form: FormGroup) {
-    this.DateFunction()
+    this.DateFunction(form)
     this.CheckDateValidity(form);
     if (!this.errorform) {
       this.showHide = true;
@@ -94,12 +98,20 @@ export class NeueBuchungComponent {
     this.service.getAllData().subscribe(data => {
       this.data = data;
       for (let i = 0; i < data.length; i++) {
-        if ((form.value.Startdate >= data[i].Startdate && form.value.Startdate > data[i].Enddate) ||
-          (form.value.Enddate > data[i].Startdate && form.value.Enddate >= data[i].Enddate) ||
-          (form.value.Startdate <= data[i].Startdate) || (form.value.Enddate < data[i].Startdate)) {
+        form.value.Startdate = this.datepipe.transform(form.value.Startdate, 'yyyy-MM-dd')
+        form.value.Enddate = this.datepipe.transform(form.value.Enddate, 'yyyy-MM-dd')
+        if ((form.value.Startdate < data[i].Startdate && form.value.Enddate <= data[i].Startdate) ||
+          (form.value.Startdate > data[i].Startdate && form.value.Enddate >= data[i].Startdate)) {
+          console.log(form.value.Startdate)
+          console.log(form.value.Enddate)
+          console.log(data[i].Enddate)
+          console.log(data[i].Startdate)
           temp.push(this.reservedrooms[i])
         }
       }
+
+
+
       this.CheckFreeRoomAndSort(this.data, this.form, temp);
     });
   }
@@ -114,6 +126,7 @@ export class NeueBuchungComponent {
       if ((form.value.Startdate >= data[i].Startdate && form.value.Startdate < data[i].Enddate) ||
         (form.value.Enddate > data[i].Startdate && form.value.Enddate <= data[i].Enddate)) {
         temp1.push(this.reservedrooms[i])
+        console.log('hallo')
       }
     }
     temp2 = temp.filter(x => temp1.indexOf(x) === -1);
@@ -148,7 +161,7 @@ export class NeueBuchungComponent {
   onSubmit() {
     this.CheckFormValidity(this.form)
     this.CheckEmailValidity(this.form)
-    if (!this.errorform) {
+    if (!this.errorform && !this.errormail) {
       this.service.getAllData().subscribe((res) => {
         this.data = res;
         if (this.data.length == 0) {
@@ -161,6 +174,8 @@ export class NeueBuchungComponent {
         this.bookingnumber = this.booking_first_part + this.booking_last_part + this.temp;
         this.form.value.Bookingnumber = this.bookingnumber;
         this.form.value.Roomnumber = (JSON.parse(this.form.value.Roomnumber))
+        this.form.value.Startdate = this.datepipe.transform(this.form.value.Startdate, 'yyyy-MM-dd')
+        this.form.value.Enddate = this.datepipe.transform(this.form.value.Enddate, 'yyyy-MM-dd')
         this.SendData();
       })
       this.DataToLocalstorage();
@@ -168,7 +183,7 @@ export class NeueBuchungComponent {
   }
 
 
- DataToLocalstorage() {
+  DataToLocalstorage() {
     this.reservedrooms.push(JSON.parse(this.form.value.Roomnumber))
     localStorage.setItem("reservedrooms", JSON.stringify(this.reservedrooms))
   }
@@ -229,8 +244,16 @@ export class NeueBuchungComponent {
     } else {
       this.errormail = ''
     }
+  }
+
+  toogle(event: any){
+    this.showHide = false;
 
   }
 
+  saveDate(form: FormGroup){
+    this.startD= form.value.Startdate;
+    this.endD= form.value.Enddate;
+console.log()
+  }
 }
-
