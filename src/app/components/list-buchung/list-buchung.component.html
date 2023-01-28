@@ -8,13 +8,12 @@
 </head>
 <br><br><br><br>
 <div class="content" role="main">
-  <form class="ui container form" appearance="fill" [formGroup]="form_search">
-    <input class="theinput" type="search" formControlName="search" style="height: 30px;" [(ngModel)]="search">
-  </form>
+  <input class="theinput" type="search" style="height: 30px;" (keyup)="FilterChange($event)">
   <br><br>
   <ng-container *ngIf="dataSource; else loadingOrError">
     <div class="mat-elevation-z8">
-      <table class="mytable" mat-table [dataSource]="dataSource | filter: search" matSort>
+
+      <table class="mytable" mat-table [dataSource]="dataSource" matSort>
 
 
         <ng-container matColumnDef="Bookingnumber">

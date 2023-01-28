@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Customer} from "../../models/customer";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -40,9 +40,7 @@ export class ListBuchungComponent implements OnInit {
   ngOnInit(): void {
     this.service.LogOut();
     this.refresh();
-    this.form_search = this.fb.group({
-      search: [''],
-    });
+
     this.refresh()
   }
 
@@ -87,7 +85,10 @@ export class ListBuchungComponent implements OnInit {
         this.errorObject = 'Sorry, it was not possible to load the data.';
       }
     });
-
   }
 
+  FilterChange(event: Event){
+   const filValue =(event.target as HTMLInputElement).value;
+   this.dataSource.filter = filValue;
+  }
 }
