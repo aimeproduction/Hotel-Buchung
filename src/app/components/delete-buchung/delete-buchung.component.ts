@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DialogData} from "../../Models/dialogData";
 import {HotelServiceService} from "../../service/hotel-service.service";
@@ -12,7 +12,7 @@ import {catchError} from "rxjs/operators";
   templateUrl: './delete-buchung.component.html',
   styleUrls: ['./delete-buchung.component.css']
 })
-export class DeleteBuchungComponent {
+export class DeleteBuchungComponent implements OnInit {
   index: number = 0;
   customer_id = 0;
   data_api$!: Observable<Customer>;
@@ -26,6 +26,7 @@ export class DeleteBuchungComponent {
   }
 
   ngOnInit(): void {
+    this.service.LogOut();
     this.idAndIndex();
     this.errorObject = ''
     this.data_api$ = this.service.get_customer_data_by_id(this.customer_id).pipe(

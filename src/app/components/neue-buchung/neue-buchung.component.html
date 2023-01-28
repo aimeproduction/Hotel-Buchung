@@ -25,7 +25,7 @@
         <div class="divdate1">
           <mat-form-field appearance="outline">
             <mat-label>Choose a date</mat-label>
-            <input matInput  [matDatepicker]="picker1" formControlName="Enddate" (dateChange)="toogle($event)">
+            <input matInput [matDatepicker]="picker1" formControlName="Enddate" (dateChange)="toogle($event)">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
@@ -62,7 +62,15 @@
                         </mat-select>
                       </mat-form-field>
                     </td>
-                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td>
                       <mat-form-field appearance="fill">
                         <mat-select formControlName="Gender" placeholder="Gender">
@@ -77,49 +85,58 @@
                 <div class="fcf-form-group">
                   <label for="Firstname" class="fcf-label">Firstname</label>
                   <div class="fcf-input-group">
-                    <input type="text" id="Firstname" formControlName="Firstname" name="Name" class="fcf-form-control" required>
+                    <input type="text" id="Firstname" formControlName="Firstname" name="Name" class="fcf-form-control"
+                           required>
                   </div>
                 </div>
                 <div class="fcf-form-group">
                   <label for="Lastname" class="fcf-label">Lastname</label>
                   <div class="fcf-input-group">
-                    <input type="text" id="Lastname" formControlName="Lastname" name="Name" class="fcf-form-control" required>
+                    <input type="text" id="Lastname" formControlName="Lastname" name="Name" class="fcf-form-control"
+                           required>
                   </div>
                 </div>
                 <div class="fcf-form-group">
                   <label for="Phonenummer" class="fcf-label">Phone number</label>
                   <div class="fcf-input-group">
-                    <input type="number" id="Phonenummer" formControlName="Phonenummer" name="Name" class="fcf-form-control" required>
+                    <input type="number" id="Phonenummer" formControlName="Phonenummer" name="Name"
+                           class="fcf-form-control" required>
                   </div>
                 </div>
 
                 <div class="fcf-form-group">
                   <label for="Email" class="fcf-label">Email address</label>
                   <div class="fcf-input-group">
-                    <input type="email" id="Email" formControlName="Email" name="Email" class="fcf-form-control" required>
+                    <input type="email" id="Email" formControlName="Email" name="Email" class="fcf-form-control"
+                           required>
                   </div>
                 </div>
                 <div class="fcf-form-group">
                   <label for="Startdate" class="fcf-label">Arrival date</label>
                   <div class="fcf-input-group">
-                    <input type="text" id="Startdate" class="fcf-form-control" value="{{startD | date: 'dd/MM/yyyy'}}" readonly>
+                    <input type="text" id="Startdate" class="fcf-form-control" value="{{startD | date: 'dd/MM/yyyy'}}"
+                           readonly>
                   </div>
                 </div>
                 <div class="fcf-form-group">
                   <label for="Enddate" class="fcf-label">Departure date</label>
                   <div class="fcf-input-group">
-                    <input type="text" id="Enddate"   value="{{endD | date: 'dd/MM/yyyy'}}" class="fcf-form-control" readonly>
+                    <input type="text" id="Enddate" value="{{endD | date: 'dd/MM/yyyy'}}" class="fcf-form-control"
+                           readonly>
                   </div>
                 </div>
 
                 <br><br>
                 <div class="fcf-form-group">
-                  <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block" (click)="onSubmit()">Booking of the
-                    room</button>
+                  <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block"
+                          (click)="onSubmit()">Booking of the
+                    room
+                  </button>
                 </div>
                 <div class="errorform">
                   <p class="errordateMessage"> {{errorform}}</p>
                   <p class="errordateMessage"> {{errormail}}</p>
+                  <p class="errordateMessage"> {{errormail1}}</p>
                 </div>
               </form>
             </div>

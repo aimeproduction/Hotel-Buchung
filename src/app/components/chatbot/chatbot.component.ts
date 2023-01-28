@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { message} from "../../models/message";
+import {Component} from '@angular/core';
+import {message} from "../../models/message";
 import {HotelServiceService} from "../../service/hotel-service.service";
+
 @Component({
   selector: 'app-chatbot',
   templateUrl: './chatbot.component.html',
@@ -9,12 +10,16 @@ import {HotelServiceService} from "../../service/hotel-service.service";
 export class ChatbotComponent {
   textContent: string = '';
   messages: message[] = [];
-  show=false;
+  show = false;
 
-  constructor(private service: HotelServiceService) {}
-test(){
-    this.show=true;
-}
+  constructor(private service: HotelServiceService) {
+  }
+
+  test() {
+    this.show = true;
+  }
+
+
   sendMessage() {
     if (this.textContent === '' || this.textContent === ' ') {
       return;
@@ -29,6 +34,7 @@ test(){
     });
   }
 
+
   private createPrompt() {
     let prompt = '';
     this.messages.forEach((message) => {
@@ -40,6 +46,7 @@ test(){
     });
     return prompt;
   }
+
 
   createMessageAndPush(text?: string, ownerId?: number) {
     let message: message = {

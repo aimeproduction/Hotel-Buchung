@@ -15,20 +15,20 @@ import {MatSort} from "@angular/material/sort";
   templateUrl: './list-buchung.component.html',
   styleUrls: ['./list-buchung.component.css']
 })
-export class ListBuchungComponent implements OnInit{
-  title='pagination'
-  index: number =0;
+export class ListBuchungComponent implements OnInit {
+  title = 'pagination'
+  index: number = 0;
   customer_id: number = 0;
   data!: Customer[];
   search!: string;
   public form_search!: FormGroup;
   errorObject = '';
-  displayedColumns: string[] = ["Bookingnumber","Gender", "Firstname",
-    "Lastname","Email","Phonenummer","Roomnumber","Startdate","Enddate", "Administration"];
-  forThePagination=true;
-  Dataavailable =false
-
+  displayedColumns: string[] = ["Bookingnumber", "Gender", "Firstname",
+    "Lastname", "Email", "Phonenummer", "Roomnumber", "Startdate", "Enddate", "Administration"];
+  forThePagination = true;
+  Dataavailable = false
   dataSource!: MatTableDataSource<Customer>;
+
   constructor(private _snackBar: MatSnackBar,
               public dialog: MatDialog, private service: HotelServiceService, private fb: FormBuilder) {
   }
@@ -38,15 +38,16 @@ export class ListBuchungComponent implements OnInit{
 
 
   ngOnInit(): void {
+    this.service.LogOut();
     this.refresh();
     this.form_search = this.fb.group({
       search: [''],
     });
-    console.log('hall')
+    this.refresh()
   }
 
 
-  delete_Booking( id: number, index: number) {
+  delete_Booking(id: number, index: number) {
     this.index = index;
     this.customer_id = id;
     this.dialog.open(DeleteBuchungComponent, {
@@ -71,18 +72,18 @@ export class ListBuchungComponent implements OnInit{
   refresh() {
     this.errorObject = '';
     this.service.getAllData().subscribe({
-      next:(res)=>{
+      next: (res) => {
         this.data = res;
         this.dataSource = new MatTableDataSource<Customer>(this.data)
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort
         this.errorObject = '';
-        if(this.data.length ==0){
+        if (this.data.length == 0) {
           this.forThePagination = false;
-          this.Dataavailable =true;
+          this.Dataavailable = true;
         }
       },
-      error:()=>{
+      error: () => {
         this.errorObject = 'Sorry, it was not possible to load the data.';
       }
     });

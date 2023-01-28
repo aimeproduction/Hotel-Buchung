@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HotelServiceService} from "../../service/hotel-service.service";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -12,7 +12,7 @@ import {Customer} from "../../models/customer";
   templateUrl: './neue-buchung.component.html',
   styleUrls: ['./neue-buchung.component.css']
 })
-export class NeueBuchungComponent {
+export class NeueBuchungComponent implements OnInit {
   showHide = true;
   booking_first_part = 'Bo'
   booking_last_part = 1;
@@ -26,9 +26,10 @@ export class NeueBuchungComponent {
   bookingnumber = '';
   todayDate = new Date();
   latest_date!: any;
-  errormail =''
+  errormail = ''
   startD: any;
   endD: any;
+  errormail1 = ''
 
   constructor(public datepipe: DatePipe, private route: Router, private fb: FormBuilder,
               private service: HotelServiceService, private _snackBar: MatSnackBar) {
@@ -111,7 +112,6 @@ export class NeueBuchungComponent {
       }
 
 
-
       this.CheckFreeRoomAndSort(this.data, this.form, temp);
     });
   }
@@ -161,7 +161,7 @@ export class NeueBuchungComponent {
   onSubmit() {
     this.CheckFormValidity(this.form)
     this.CheckEmailValidity(this.form)
-    if (!this.errorform && !this.errormail) {
+    if (!this.errorform && !this.errormail && !this.errormail1) {
       this.service.getAllData().subscribe((res) => {
         this.data = res;
         if (this.data.length == 0) {
@@ -216,7 +216,6 @@ export class NeueBuchungComponent {
   CheckFormValidity(form: FormGroup) {
     if (!form.value.Roomnumber) {
       this.errorform = 'Please choose a room number';
-      console.log(this.errorform)
     } else if (!form.value.Gender) {
       this.errorform = 'Please choose a gender'
     } else if (!form.value.Firstname) {
@@ -236,24 +235,31 @@ export class NeueBuchungComponent {
   CheckEmailValidity(form: FormGroup) {
     const myList = [',', '/', '!', '§', '$', '%', '&', '{', '(', '[', ')', ']', '=',
       '}', '?', '\\', '<', '>', '|', ';', ':']
+    const myList1 = ['@', '.']
     const myString = form.value.Email
 
     const hasChar = myList.some((charac) => myString.includes(charac));
+    const hasChar1 = myList1.some((charac) => myString.includes(charac));
     if (hasChar) {
       this.errormail = 'Your email contains invalid character(s).'
     } else {
       this.errormail = ''
     }
+    if (!hasChar1) {
+      this.errormail1 = 'Your email muss contains the caracters @ and .'
+    } else {
+      this.errormail1 = ''
+    }
   }
 
-  toogle(event: any){
+  toogle(event: any) {
     this.showHide = false;
 
   }
 
-  saveDate(form: FormGroup){
-    this.startD= form.value.Startdate;
-    this.endD= form.value.Enddate;
-console.log()
+  saveDate(form: FormGroup) {
+    this.startD = form.value.Startdate;
+    this.endD = form.value.Enddate;
+    console.log()
   }
 }
