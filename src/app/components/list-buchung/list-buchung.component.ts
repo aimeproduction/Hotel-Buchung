@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Customer} from "../../models/customer";
-import {FormBuilder, FormGroup} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
 import {HotelServiceService} from "../../service/hotel-service.service";
@@ -21,7 +20,6 @@ export class ListBuchungComponent implements OnInit {
   customer_id: number = 0;
   data!: Customer[];
   search!: string;
-  public form_search!: FormGroup;
   errorObject = '';
   displayedColumns: string[] = ["Bookingnumber", "Gender", "Firstname",
     "Lastname", "Email", "Phonenummer", "Roomnumber", "Startdate", "Enddate", "Administration"];
@@ -30,7 +28,7 @@ export class ListBuchungComponent implements OnInit {
   dataSource!: MatTableDataSource<Customer>;
 
   constructor(private _snackBar: MatSnackBar,
-              public dialog: MatDialog, private service: HotelServiceService, private fb: FormBuilder) {
+              public dialog: MatDialog, private service: HotelServiceService) {
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -88,7 +86,6 @@ export class ListBuchungComponent implements OnInit {
   }
 
   FilterChange(event: Event){
-   const filValue =(event.target as HTMLInputElement).value;
-   this.dataSource.filter = filValue;
+    this.dataSource.filter = (event.target as HTMLInputElement).value;
   }
 }
