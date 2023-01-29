@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="flex flex-column h-full mx-1 my-2">
-    <div class="p-3 md:px-4 lg:px-6 lg:py-4 mt-2 overflow-y-auto" style="max-height: 53vh;" #chatWindow
+    <div class="p-3 md:px-4 lg:px-6 lg:py-4 mt-2 overflow-y-auto" #chatWindow
          [scrollTop]="chatWindow.scrollHeight">
       <div *ngFor="let message of messages">
         <div *ngIf="message.ownerId == 2" class="grid grid-nogutter mb-4">

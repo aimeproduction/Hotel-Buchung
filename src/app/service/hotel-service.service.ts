@@ -30,7 +30,7 @@ export class HotelServiceService {
     this.configuration = new Configuration({
       apiKey: this.apiKey
     });
-    this.api = new OpenAIApi(this.configuration);
+    this.api = new OpenAIApi(this.configuration)
   }
   async getAnwser(text: string) {
     let answer = await this.api.createCompletion({

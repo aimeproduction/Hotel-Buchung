@@ -10,13 +10,8 @@ import {HotelServiceService} from "../../service/hotel-service.service";
 export class ChatbotComponent {
   textContent: string = '';
   messages: message[] = [];
-  show = false;
 
   constructor(private service: HotelServiceService) {
-  }
-
-  test() {
-    this.show = true;
   }
 
 
@@ -28,12 +23,12 @@ export class ChatbotComponent {
     let prompt = this.createPrompt();
     this.textContent = '';
     this.createMessageAndPush('KI Schreibt...', 2);
+    console.log(prompt)
     this.service.getAnwser(prompt).then((response) => {
       this.messages.pop();
       this.createMessageAndPush(response, 2);
     });
   }
-
 
   private createPrompt() {
     let prompt = '';
@@ -46,7 +41,6 @@ export class ChatbotComponent {
     });
     return prompt;
   }
-
 
   createMessageAndPush(text?: string, ownerId?: number) {
     let message: message = {

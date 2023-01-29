@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="095abcf1-b77d-40e7-8c11-a24be4aa16e7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/neue-buchung/neue-buchung.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/neue-buchung/neue-buchung.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/edit-buchung/edit-buchung.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/edit-buchung/edit-buchung.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/hotel-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/hotel-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environments.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

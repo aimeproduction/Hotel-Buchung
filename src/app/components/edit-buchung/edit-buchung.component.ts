@@ -56,7 +56,7 @@ export class EditBuchungComponent implements OnInit {
       Bookingnumber: ['', Validators.required],
       Gender: ['', Validators.required],
       Roomnumber: ['', Validators.required],
-      Firstname: ['', [Validators.required, Validators.minLength(4)]],
+      Firstname: ['', Validators.required],
       Lastname: ['', Validators.required],
       Email: ['', Validators.required],
       Phonenummer: ['', Validators.required],

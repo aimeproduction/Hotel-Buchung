@@ -36,9 +36,8 @@ export class ListBuchungComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.service.LogOut();
     this.refresh();
-
+    this.service.LogOut();
     this.refresh()
   }
 
