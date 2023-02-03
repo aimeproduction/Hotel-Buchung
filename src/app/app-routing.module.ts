@@ -4,7 +4,6 @@ import {ListBuchungComponent} from "./components/list-buchung/list-buchung.compo
 import {NeueBuchungComponent} from "./components/neue-buchung/neue-buchung.component";
 import {LoginComponent} from "./components/login/login.component";
 import {ProtectLoginGuard} from "./components/login/protect-login.guard";
-import {HomeComponent} from "./components/home/home.component";
 import {ChatbotComponent} from "./components/chatbot/chatbot.component";
 
 
@@ -18,11 +17,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    //  canDeactivate: [ProtectLoginGuard]
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
+    canDeactivate: [ProtectLoginGuard]
   },
   {
     path: 'neue-buchung',

@@ -25,7 +25,6 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
 import { DatePipe } from '@angular/common';
 import { DialogComponent } from './components/dialog/dialog.component'
 import {CountdownModule} from "ngx-countdown";
@@ -35,7 +34,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
+import {MatFormFieldModule} from "@angular/material/form-field";
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +44,6 @@ import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
     DeleteBuchungComponent,
     LoginComponent,
     NavbarComponent,
-    HomeComponent,
     DialogComponent,
     ChatbotComponent
   ],

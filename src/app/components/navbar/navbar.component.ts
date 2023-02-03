@@ -16,7 +16,7 @@ export class NavbarComponent {
 
   ngOnInit(): void{
     this.timer = this.service.timer;
-this.service.LogOut();
+    this.service.LogOut();
   }
 @HostListener('window:mousemove')
 OnMouseMove(){

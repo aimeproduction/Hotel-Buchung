@@ -35,6 +35,7 @@ export class NeueBuchungComponent implements OnInit {
               private service: HotelServiceService, private _snackBar: MatSnackBar) {
   }
 
+
   ngOnInit(): void {
     this.service.LogOut();
     this.form = this.fb.group({
@@ -254,7 +255,6 @@ export class NeueBuchungComponent implements OnInit {
 
   toogle(event: any) {
     this.showHide = false;
-
   }
 
   saveDate(form: FormGroup) {

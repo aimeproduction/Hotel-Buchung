@@ -4,7 +4,6 @@ import {HttpClient} from "@angular/common/http";
 import {Customer} from "../models/customer";
 import {BnNgIdleService} from "bn-ng-idle";
 import {Router} from "@angular/router";
-
 import { Configuration, OpenAIApi } from 'openai';
 import { environments } from 'src/environments/environments';
 import {MatDialog} from "@angular/material/dialog";
@@ -84,4 +83,5 @@ LogOut(){
     localStorage.setItem("reservedrooms", JSON.stringify(currentrooms));
     return currentrooms;
   }
+
 }

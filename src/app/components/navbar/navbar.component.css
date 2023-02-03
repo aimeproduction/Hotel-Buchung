@@ -7,11 +7,12 @@
   background-color: darkslategray;
 
 }
-.home{
-  margin-left: 25%;
+
+.new-book{
+  margin-left: 29%;
   font-size: 18px;
 }
-.new-book{
+.new-book1, .new-book2{
   font-size: 18px;
 }
 .Timerlogout{

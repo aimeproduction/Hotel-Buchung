@@ -23,10 +23,10 @@ export class ListBuchungComponent implements OnInit {
   errorObject = '';
   displayedColumns: string[] = ["Bookingnumber", "Gender", "Firstname",
     "Lastname", "Email", "Phonenummer", "Roomnumber", "Startdate", "Enddate", "Administration"];
-  forThePagination = true;
   Dataavailable = false
   dataSource!: MatTableDataSource<Customer>;
-
+  roomInvalid = false;
+  paginationShow=false;
   constructor(private _snackBar: MatSnackBar,
               public dialog: MatDialog, private service: HotelServiceService) {
   }
@@ -73,9 +73,10 @@ export class ListBuchungComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort
         this.errorObject = '';
+        this.paginationShow=true;
         if (this.data.length == 0) {
-          this.forThePagination = false;
           this.Dataavailable = true;
+          this.paginationShow = false;
         }
       },
       error: () => {
@@ -87,4 +88,5 @@ export class ListBuchungComponent implements OnInit {
   FilterChange(event: Event){
     this.dataSource.filter = (event.target as HTMLInputElement).value;
   }
+
 }

@@ -1,11 +1,13 @@
-<nav><mat-toolbar class="mat-elevation-z8">
+<html>
+<nav>
+  <mat-toolbar class="mat-elevation-z8">
   Welcome!
 
-  <button class="home" mat-button [routerLinkActive]="'active'" routerLink="/home">Home</button>
   <button class="new-book" mat-button [routerLinkActive]="'active'"  routerLink="/neue-buchung">New booking</button>
-  <button class="new-book" mat-button [routerLinkActive]="'active'"  routerLink="/list-buchung">List of bookings</button>
-  <button class="new-book" mat-button [routerLinkActive]="'active'"  routerLink="/chatbot">Entertainment</button>
+  <button class="new-book1" mat-button [routerLinkActive]="'active'"  routerLink="/list-buchung">List of bookings</button>
+  <button class="new-book2" mat-button [routerLinkActive]="'active'"  routerLink="/chatbot">Entertainment</button>
   <countdown #cd class="Timerlogout" [config]="{leftTime: timer}"></countdown>
   <a routerLink="/login"> <img class="logout" src="assets/images/logout.png" alt=""></a>
 </mat-toolbar>
 </nav>
+</html>

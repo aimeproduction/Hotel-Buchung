@@ -6,11 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="095abcf1-b77d-40e7-8c11-a24be4aa16e7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/edit-buchung/edit-buchung.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/edit-buchung/edit-buchung.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/list-buchung/list-buchung.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/neue-buchung/neue-buchung.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/neue-buchung/neue-buchung.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/neue-buchung/neue-buchung.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/neue-buchung/neue-buchung.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/neue-buchung/neue-buchung.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/neue-buchung/neue-buchung.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/service/hotel-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/hotel-service.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/environments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environments.ts" afterDir="false" />
     </list>
@@ -42,7 +57,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="login-component" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
@@ -63,7 +78,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mnang/WebstormProjects/promise_async_await&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mnang/WebstormProjects/Hotel-Buchung/src/app/components/login/login&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,7 +89,11 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mnang\WebstormProjects\Hotel-Buchung\src\app\components\login\login" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mnang\WebstormProjects\Hotel-Buchung\src\app\components\login\login" />
       <recent name="C:\Users\mnang\WebstormProjects\Hotel-Buchung\hotel-buchung-angular\src\assets" />
     </key>
   </component>
@@ -118,6 +137,8 @@
       <workItem from="1674735460967" duration="267000" />
       <workItem from="1674735736544" duration="22266000" />
       <workItem from="1674931630121" duration="6828000" />
+      <workItem from="1675162040691" duration="3941000" />
+      <workItem from="1675192684541" duration="17938000" />
     </task>
     <servers />
   </component>
