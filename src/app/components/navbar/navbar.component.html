@@ -2,12 +2,11 @@
 <nav>
   <mat-toolbar class="mat-elevation-z8">
   Welcome!
-
-  <button class="new-book" mat-button [routerLinkActive]="'active'"  routerLink="/neue-buchung">New booking</button>
-  <button class="new-book1" mat-button [routerLinkActive]="'active'"  routerLink="/list-buchung">List of bookings</button>
-  <button class="new-book2" mat-button [routerLinkActive]="'active'"  routerLink="/chatbot">Entertainment</button>
+  <button class="new-book" mat-button [routerLinkActive]="'active'"  routerLink="/neue-buchung" data-cy = "new-booking-button">New booking</button>
+  <button class="new-book1" mat-button [routerLinkActive]="'active'"  routerLink="/list-buchung" data-cy = "list-button">List of bookings</button>
+  <button class="new-book2" mat-button [routerLinkActive]="'active'"  routerLink="/chatbot" data-cy = "entertainment-button">Entertainment</button>
   <countdown #cd class="Timerlogout" [config]="{leftTime: timer}"></countdown>
-  <a routerLink="/login"> <img class="logout" src="assets/images/logout.png" alt=""></a>
+  <a routerLink="/login"> <img class="logout" src="assets/images/logout.png" alt="" data-cy = "logout-button"></a>
 </mat-toolbar>
 </nav>
 </html>

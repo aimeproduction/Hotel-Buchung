@@ -23,7 +23,6 @@ export class ChatbotComponent {
     let prompt = this.createPrompt();
     this.textContent = '';
     this.createMessageAndPush('KI Schreibt...', 2);
-    console.log(prompt)
     this.service.getAnwser(prompt).then((response) => {
       this.messages.pop();
       this.createMessageAndPush(response, 2);
