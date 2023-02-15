@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="095abcf1-b77d-40e7-8c11-a24be4aa16e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/login.cy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/e2e/spec.cy.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/support/commands.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/commands.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/support/e2e.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/e2e.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chatbot/chatbot.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environments.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +137,7 @@
       <workItem from="1675192684541" duration="17938000" />
       <workItem from="1675804270470" duration="868000" />
       <workItem from="1675844409356" duration="6001000" />
+      <workItem from="1676386339594" duration="8028000" />
     </task>
     <servers />
   </component>
